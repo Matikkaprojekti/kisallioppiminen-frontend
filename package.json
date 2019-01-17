@@ -29,7 +29,8 @@
     "@types/react": "^16.4.17",
     "@types/react-dom": "^16.0.9",
     "@types/request": "^2.48.0",
-    "@types/request-promise": "^4.1.42"
+    "@types/request-promise": "^4.1.42",
+    "tslint-config-prettier": "^1.17.0"
   },
   "scripts": {
     "start": "webpack --env.platform=web && webpack --env.platform=server && node ./dist/js/server",
