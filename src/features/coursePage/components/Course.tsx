@@ -14,14 +14,14 @@ const instructions =
     Lisäksi tiedät, että määritelmä on matematiikassa sopimus siitä, mitä jollakin käsitteellä tarkoitetaan.'
 
 const exercise = {
-  question: 'Ilmoita seuraavat prosentit desimaalilukumuodossa ilman prosenttimerkkiä:',
+  question:
+    'Ilmoita seuraavat prosentit desimaalilukumuodossa ilman prosenttimerkkiä:',
   options: [
     '$$50\\ \\%$$',
     '$$8{,}3\\ \\%$$',
     '$$24\\ \\%$$',
     '$$160\\ \\%$$',
     '$$230\\ \\%$$'
-
   ]
 }
 
@@ -30,7 +30,7 @@ export class Course extends Component<{}, { instructions: string }> {
     super(props)
 
     this.state = {
-      instructions: null,
+      instructions: null
     }
   }
 
@@ -46,8 +46,7 @@ export class Course extends Component<{}, { instructions: string }> {
         <h3 style={{ textAlign: 'center' }}>Luvut ja laskutoimitukset</h3>
         <Instructions instructions={this.state.instructions} />
         <Exercise exercise={exercise} />
-
-      </div >
+      </div>
     )
   }
 }

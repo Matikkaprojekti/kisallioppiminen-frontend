@@ -6,13 +6,11 @@ export class Header extends Component {
     return (
       <div>
         <Navbar className="teal acent-2" brand="logo" right>
-          <NavItem > Materiaalit </NavItem>
-          <NavItem > Blogi </NavItem>
-          <NavItem > Tietoa </NavItem>
-          <NavItem > Beta </NavItem>
-
+          <NavItem> Materiaalit </NavItem>
+          <NavItem> Blogi </NavItem>
+          <NavItem> Tietoa </NavItem>
+          <NavItem> Beta </NavItem>
         </Navbar>
-
       </div>
     )
   }

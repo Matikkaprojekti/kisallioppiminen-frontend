@@ -1,4 +1,12 @@
-export const createTemplate = ({title, body, initialState}: {title: string, body: string, initialState: string}) => {
+export const createTemplate = ({
+  title,
+  body,
+  initialState
+}: {
+  title: string
+  body: string
+  initialState: string
+}) => {
   return `
   <!DOCTYPE html>
   <html>
