@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
 export class Assignment extends Component {
-    render() {
-        return (
-            <div>
+  render() {
+    return (
+      <div>
 
-            </div>
-        )
-    }
+      </div>
+    )
+  }
 }
 
 export default Assignment
