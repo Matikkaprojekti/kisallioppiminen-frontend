@@ -15,8 +15,8 @@ tabId:3 /]
 
 
 [CourseSection sectionId:0 ]
+
 [Chapter header:'Kurssin tavoitteet ja keskeiset sisällöt']
-// Kommentteja voi lisätä materiaalin koodin sekaan selkeyttämään
 ### Kurssin tavoitteena on, että
 
 * harjaannut hahmottamaan ja kuvaamaan tilaa sekä muotoa koskevaa tietoa sekä kaksi- että kolmiulotteisissa tilanteissa
@@ -58,8 +58,9 @@ opittuja asioita sekä antaa palautetta oppimisesta ja sen etenemisestä yhteise
 [/CourseSection]
 
 [CourseSection sectionId:1]
+
 [Chapter header:'LUVUN TAVOITTEET'] 
-// Kommentteja voi lisätä materiaalin koodin sekaan selkeyttämään
+
 [Definition header:'']
 Tämän luvun tavoitteena on, että osaat ratkaista erilaisia geometrisia ongelmia kolmioiden avulla. Osaat
 
@@ -69,10 +70,11 @@ Tämän luvun tavoitteena on, että osaat ratkaista erilaisia geometrisia ongelm
 * määrittää kolmioiden sivujen pituuksia ja kulmien suuruuksia Pythagoraan lauseen, trigonometristen suhteiden sekä sini- ja kosinilauseiden avulla
 * päätellä suplementtikulman sinin ja kosinin arvot.
 [/Definition]
+
 [/Chapter]
 
 [Chapter header:'KOLMION PINTA-ALA JA KULMAT (1.1 - 1.7)'] 
-// Kommentteja voi lisätä materiaalin koodin sekaan selkeyttämään
+
 Kolmioita voidaan käyttää apuna monien geometristen ongelmien ratkaisemisessa. 
 Aloitammekin tämän kurssin palauttamalla mieleen kolmioiden geometrisia ominaisuuksia.
 
@@ -81,11 +83,15 @@ Lähtökohdaksi voidaan ottaa suorakulmion pinta-ala. Sovitaan siis ensin, mitä
 Asetetaan seuraava määritelmä:
 
 [Definition header:'MÄÄRITELMÄ: SUORAKULMION PINTA-ALA']
+
 Suorakulmion *pinta-ala* on samasta kärjestä alkavien sivujen pituuksien tulo eli alla olevan kuvion merkinnöillä ab. 
+
 [MaterialPicture imagesrc:'/img/maa3/suoraK04.png' /]
+
 [/Definition]
 
 [Exercise header:'TEHTÄVÄ 1.1: SUORAKULMION PINTA-ALA' open:false]
+
 Kansainvälisissä aikuisten jalkapallo-otteluissa kentän leveyden on oltava vähintään 64 m ja enintään 75 m. 
 Kentän pituuden on oltava vähintään 100 m ja enintään 110 m.
 
@@ -94,11 +100,13 @@ Kentän pituuden on oltava vähintään 100 m ja enintään 110 m.
 (b) Kuinka monta prosenttia suurin mahdollinen kenttä on isompi kuin pienin mahdollinen kenttä?
 
 [Answer]
+
 (a) [Equation]1850 m^2[/Equation]
 
-(b) [Equation]Noin 29 %.[/Equation]
+(b) [Equation]\text{Noin} 29 \%[/Equation]
 
 [/Answer]
+
 [/Exercise]
 
 Suorakulmion pinta-alan avulla saadaan johdettua lauseke kolmion pinta-alalle.
@@ -106,6 +114,7 @@ Suorakulmion pinta-alan avulla saadaan johdettua lauseke kolmion pinta-alalle.
 [Exercise header:'TEHTÄVÄ 1.2: KOLMION PINTA-ALA' open:false]
 
 [MaterialPicture imagesrc:'/img/maa3/suoraK17.png' /]
+
 (a) Piirrä yllä olevan kuvan kolmio vihkoosi ja täydennä se suorakulmioksi.
 
 (b) Muodosta suorakulmion pinta-alan lauseke.
@@ -115,7 +124,9 @@ Suorakulmion pinta-alan avulla saadaan johdettua lauseke kolmion pinta-alalle.
 [/Exercise]
 
 [Exercise header:'TEHTÄVÄ 1.3: KOLMION PINTA-ALA' open:false]
+
 [MaterialPicture imagesrc:'/img/maa3/suoraK05.png' /]
+
 (a) Piirrä yllä olevan kuvan kolmio vihkoosi ja täydennä se suorakulmioksi. 
 Vinkki: voit esimerkiksi soveltaa edellisen tehtävän ideaa kumpaankin kuvassa näkyvään suorakulmaiseen kolmioon.
 
@@ -130,27 +141,41 @@ Lue teoreema ja sen perustelu huolellisesti. Mieti jokaisen virkkeen jälkeen, m
 Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
 
 [Theorem header:'KOLMION PINTA-ALA (TEOREEMA 1)']
+
 Kolmion pinta-ala on puolet sen kannan ja korkeuden tulosta eli alla olevan kuvion merkinnöillä
-[Equation]ah/2[/Equation]
+
+[Equation]\frac{ah}{2}[/Equation]
+
 [MaterialPicture imagesrc:'/img/maa3/suoraK05.png' /]
+
 [/Theorem]
+
 [Rationalization]
+
 Perustelu: Kolmion korkeusjanan toinen päätepiste voi sijaita kolmion sivun päätepisteessä, kolmion sivulla tai sivun jatkeella. 
 Tarkastellaan jokainen näistä tapauksista erikseen.
 
 1. Tapaus, jossa kolmion korkeusjanan toinen päätepiste sijaitsee kolmion sivun päätepisteessä, on käsitelty tehtävässä 1.2. 
+
 [MaterialPicture imagesrc:'/img/maa3/suoraK18.png' /]
 
 2. Tapaus, jossa kolmion korkeusjanan toinen päätepiste sijaitsee kolmion sivulla, on käsitelty tehtävässä 1.3. 
+
 [MaterialPicture imagesrc:'/img/maa3/suoraK05.png' /]
 
 3. Jos kolmion korkeusjanan toinen päätepiste sijaitsee kolmion sivun jatkeella, 
 voidaan kolmio täydentää suorakulmaiseksi kolmioksi, jonka pinta-ala on tehtävän 1.2 nojalla 
-[Equation](a+x)h/2[/Equation]
+
+[Equation]\frac {(a+x)h}{2}[/Equation]
+
 [MaterialPicture imagesrc:'/img/maa3/suoraK08.png' /]
 
-Alkuperäisen kolmion pinta-ala saadaan tästä vähentämällä pienemmän suorakulmaisen kolmion pinta-ala: 
-[Equation](a+x)h/2 - x/h = (ah+xh-xh)/2 = ah/2 [/Equation]
+Alkuperäisen kolmion pinta-ala saadaan tästä vähentämällä pienemmän suorakulmaisen kolmion pinta-ala:
+
+[Equation]\frac{(a+x)h}{2} - \frac{x}{h} = \frac{ah+xh-xh}{2} = \frac{ah}{2} [/Equation]
+
 [/Rationalization]
+
 [/Chapter]
+
 [/CourseSection]

@@ -31,6 +31,15 @@ a {
   text-transform: uppercase;
 }
 
+.katex {
+  font: normal 1.21em KaTeX_Main, Times New Roman, serif;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-indent: 0;
+  text-rendering: auto;
+  font-size: 25px;
+}
+
 .app {
   background-color: white;
   min-height: 100vh;
@@ -572,7 +581,6 @@ a {
   overflow: scroll;
 
   &-light {
-
     &-green {
       height: 25px;
       width: 25px;
@@ -603,4 +611,3 @@ a {
 .scoreboard th {
   transform: rotate(270deg);
 }
-

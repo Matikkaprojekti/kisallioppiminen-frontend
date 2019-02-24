@@ -22,6 +22,14 @@ a {
   text-shadow: 1px 1px 2px black;
   text-transform: uppercase; }
 
+.katex {
+  font: normal 1.21em KaTeX_Main, Times New Roman, serif;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-indent: 0;
+  text-rendering: auto;
+  font-size: 25px; }
+
 .app {
   background-color: white;
   min-height: 100vh; }
