@@ -524,7 +524,7 @@ ul {
 }
 
 .chapter {
-  overflow: auto;
+  overflow: inherit;
   border: 1px;
   border-style: ridge;
   border-color: #dddddd;
@@ -750,9 +750,15 @@ ul {
   }
 
   &-visible {
-    background-color: #cccccc;
     position: fixed;
+    border-style: ridge;
+    border-color: #dddddd;
+    background-color: ghostwhite;
+    padding: 10px;
     margin: 0 auto;
+    margin-top: 20px;
+    font-size: 24px;
+    margin-left: 25%;
   }
 }
 

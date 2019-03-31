@@ -425,7 +425,7 @@ ul {
   margin: 1% 1%; }
 
 .chapter {
-  overflow: auto;
+  overflow: inherit;
   border: 1px;
   border-style: ridge;
   border-color: #dddddd;
@@ -615,9 +615,15 @@ ul {
   display: none; }
 
 .newInstanceForm-visible {
-  background-color: #cccccc;
   position: fixed;
-  margin: 0 auto; }
+  border-style: ridge;
+  border-color: #dddddd;
+  background-color: ghostwhite;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 24px;
+  margin-left: 25%; }
 
 .newInstanceForm-visible table {
   border-spacing: 5px; }
