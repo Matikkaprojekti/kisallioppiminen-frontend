@@ -18,7 +18,8 @@ server.get('*', (req, res) => {
     title: 'Kisällioppiminen.fi',
     body,
     initialState: JSON.stringify(initialState),
-    styleSource: '"/css/style.css"'
+    styleSource: '"/css/style.css"',
+    env: process.env.IS_BUILD === 'true' ? 'production' : String(process.env.KO_ENV)
   })
 
   res.send(template)
@@ -26,4 +27,5 @@ server.get('*', (req, res) => {
 
 server.listen(PORT, () => {
   console.log('🚀  Server now listening on ', PORT)
+  console.log('Env is', process.env.KO_ENV)
 })
