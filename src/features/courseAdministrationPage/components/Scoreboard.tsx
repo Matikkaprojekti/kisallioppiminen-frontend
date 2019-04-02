@@ -62,15 +62,18 @@ const Scoreboard = ({ course }: { course: { version: string; students: Student[]
   }
   // A better unique key for the tr-elements is probably needed!
   const createTableRows = () => {
-    return students.map((student: Student) => (
-      <tr key={`${student.firstname} ${Math.random() * 10000}`}>
-        <td>{`${student.firstname} ${student.lastname} `}</td>
-        {zeroIndex()}
-        {sortExercises(student)}
-        {addTableData(student.exercises)}
-        {makeGraysEnd()}
-      </tr>
-    ))
+    if (students) {
+      return students.map((student: Student) => (
+        <tr key={`${student.firstname} ${Math.random() * 10000}`}>
+          <td>{`${student.firstname} ${student.lastname} `}</td>
+          {zeroIndex()}
+          {sortExercises(student)}
+          {addTableData(student.exercises)}
+          {makeGraysEnd()}
+        </tr>
+      ))
+    }
+    return []
   }
 
   return (
