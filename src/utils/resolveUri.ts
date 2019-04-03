@@ -15,7 +15,7 @@ export const resolveAuthUrl = () => {
   const env = typeof window !== 'undefined' ? (window as any).__koenv : process.env.KO_ENV
   if (typeof window !== 'undefined') {
     const host = window.location.host
-    return host === 'matikkaprojekti.github.io' ? 'https://ko-be-staging.herokuapp.com/users/auth' : 'http://localhost:8000/users/auth'
+    return host === 'matikkaprojekti.github.io' ? 'https://ko-be-staging.herokuapp.com/users/auth' : 'http://localhost:8080/users/auth'
   }
 
   if (env === 'production') {

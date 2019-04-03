@@ -4,9 +4,7 @@ import courseService from './../../../services/courseService'
 import { InitialState, Course } from '../../../types/InitialState'
 
 export default function NewInstanceForm() {
-
   const form = ({ pageState }: { pageState: InitialState }) => {
-
     const [selectedCourse, setSelectedCourse] = useState(pageState.courses[0])
     const [selectedVersion, setSelectedVersion] = useState(pageState.courses[0].courseContent[0].version)
     const [instanceName, setInstanceName] = useState('')
@@ -31,7 +29,7 @@ export default function NewInstanceForm() {
         startdate: startDate,
         enddate: endDate,
         coursematerial_name: selectedCourse.courseName,
-        version: selectedVersion,
+        version: selectedVersion
       }
 
       console.log('lähetys:')
@@ -59,30 +57,48 @@ export default function NewInstanceForm() {
             <tbody>
               <tr>
                 <td>Kurssin nimi</td>
-                <td><input type="text" value={instanceName} onChange={e => setInstanceName(e.target.value)} ></input></td>
+                <td>
+                  <input type="text" value={instanceName} onChange={e => setInstanceName(e.target.value)} />
+                </td>
               </tr>
               <tr>
                 <td>Kurssimateriaali</td>
-                <td><select value={selectedCourse.courseName} onChange={e => courseSelectorListener(e.target.value)}>{addCourses(pageState.courses)}</select></td>
+                <td>
+                  <select value={selectedCourse.courseName} onChange={e => courseSelectorListener(e.target.value)}>
+                    {addCourses(pageState.courses)}
+                  </select>
+                </td>
               </tr>
               <tr>
                 <td>Materiaalin versio</td>
-                <td><select value={selectedVersion} onChange={e => setSelectedVersion(e.target.value)}>{addVersions(selectedCourse)}</select></td>
+                <td>
+                  <select value={selectedVersion} onChange={e => setSelectedVersion(e.target.value)}>
+                    {addVersions(selectedCourse)}
+                  </select>
+                </td>
               </tr>
               <tr>
                 <td>Kurssiavain</td>
-                <td><input type="text" value={courseKey} onChange={e => setCourseKey(e.target.value)}></input></td>
+                <td>
+                  <input type="text" value={courseKey} onChange={e => setCourseKey(e.target.value)} />
+                </td>
               </tr>
               <tr>
                 <td>Kurssi alkaa</td>
-                <td><input type="date" value={startDate} onChange={e => setStartDate(e.target.value)}></input></td>
+                <td>
+                  <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} />
+                </td>
               </tr>
               <tr>
                 <td>Kurssi päättyy</td>
-                <td><input type="date" value={endDate} onChange={e => setEndDate(e.target.value)}></input></td>
+                <td>
+                  <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} />
+                </td>
               </tr>
               <tr>
-                <td><input type="submit" value="Luo kurssi"></input></td>
+                <td>
+                  <input type="submit" value="Luo kurssi" />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -91,12 +107,9 @@ export default function NewInstanceForm() {
     )
   }
 
-  const addCourses = (courses: Course[]) =>
-    courses.map(course => <option key={course.id}>{course.courseName}</option>)
+  const addCourses = (courses: Course[]) => courses.map(course => <option key={course.id}>{course.courseName}</option>)
 
-  const addVersions = (course: Course) =>
-    course.courseContent.map(vrsn =>
-      <option key={vrsn.version}>{vrsn.version}</option>)
+  const addVersions = (course: Course) => course.courseContent.map(vrsn => <option key={vrsn.version}>{vrsn.version}</option>)
 
   const mapStateToProps = (state: { pageState: InitialState }) => ({
     pageState: state.pageState
