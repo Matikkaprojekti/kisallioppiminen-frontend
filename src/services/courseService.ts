@@ -32,8 +32,8 @@ const createTeachingInstance = async (instance: TeachingInstance): Promise<any> 
   return response.data
 }
 
-const trafficlight = async (courseKey: string, UUID: string, status: string): Promise<any> => {
-  const { data } = await HTTP.put(`${baseUrl}/trafficlights/${UUID}`, { courseKey, status }, getRequestConfig())
+const trafficlight = async (coursekey: string, UUID: string, status: string): Promise<any> => {
+  const { data } = await HTTP.put(`${baseUrl}/trafficlights/${UUID}`, { coursekey, status }, getRequestConfig())
   console.log(data)
   return data
 }
