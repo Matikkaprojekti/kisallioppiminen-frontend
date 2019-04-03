@@ -48,7 +48,6 @@ export function resolveInitialState(path: string): { pageState: InitialState; co
             }
 
             const realLine = `[Theorem ${headerer}]`
-            console.log(realLine)
             return realLine
           }
 
