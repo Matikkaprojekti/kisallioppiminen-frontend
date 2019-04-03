@@ -79,6 +79,6 @@
     "test": "./node_modules/.bin/cypress run --record",
     "build-server": "webpack --env.platform=server",
     "lint": "tslint -c tslint.json 'src/**/*.ts?(x)'",
-    "build": "./node_modules/.bin/ts-node ./scripts/buildStaticSite.ts && webpack --env.platform=static && webpack --env.platform=styles-static"
+    "build": "IS_BUILD=true ./node_modules/.bin/ts-node ./scripts/buildStaticSite.ts && webpack --env.platform=static && webpack --env.platform=styles-static"
   }
 }
