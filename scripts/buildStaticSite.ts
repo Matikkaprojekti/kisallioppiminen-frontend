@@ -4,6 +4,12 @@ import { createApp } from '../src/features/application'
 import { writeFileSync } from 'fs'
 import { createTemplate } from '../src/server/basePage'
 
+console.log('Is build env?', process.env.IS_BUILD)
+
+if (process.env.IS_BUILD === 'true') {
+  process.env.KO_ENV = 'production'
+}
+
 const initialState = resolveInitialState('/')
 const app = createApp(initialState)
 const staticHtml = ReactServer.renderToString(app)

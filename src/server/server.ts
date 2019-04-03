@@ -5,6 +5,10 @@ import { createApp } from '../features/application'
 import { createTemplate } from './basePage'
 import { resolveInitialState } from './initialStateResolver'
 
+if (process.env.IS_BUILD === 'true') {
+  process.env.KO_ENV = 'production'
+}
+
 const PORT = process.env.PORT || 3000
 
 const server = express()
