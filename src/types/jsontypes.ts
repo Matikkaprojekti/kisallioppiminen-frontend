@@ -43,5 +43,5 @@ export interface TeachingInstance {
   startdate: string
   enddate: string
   coursematerial_name: string
-  coursematerial_version: string
+  version: string
 }

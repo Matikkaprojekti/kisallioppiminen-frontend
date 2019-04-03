@@ -31,7 +31,7 @@ export default function NewInstanceForm() {
         startdate: startDate,
         enddate: endDate,
         coursematerial_name: selectedCourse.courseName,
-        coursematerial_version: selectedVersion,
+        version: selectedVersion,
       }
 
       console.log('lähetys:')
