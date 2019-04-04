@@ -1,7 +1,8 @@
 export const resolveUri = () => {
   const env = typeof window !== 'undefined' ? (window as any).__koenv : process.env.KO_ENV
   if (env === 'production') {
-    return 'https://ko-interface.herokuapp.com'
+    // return 'https://ko-interface.herokuapp.com'
+    return 'https://ko-be-staging.herokuapp.com'
   } else if (env === 'dev') {
     return 'http://localhost:8080'
   } else if (env === 'test') {
