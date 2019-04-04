@@ -1,7 +1,7 @@
 export const resolveUri = () => {
   if (typeof window !== 'undefined') {
     const host = window.location.host
-    return host === 'matikkaprojekti.github.io' ? 'https://ko-interface.herokuapp.com' : 'https://ko-proxy-mock.herokuapp.com'
+    return host === 'matikkaprojekti.github.io' ? 'https://ko-interface.herokuapp.com' : 'http://localhost:8080'
   }
 
   if (process.env.IS_BUILD === 'true') {
