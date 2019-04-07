@@ -1,5 +1,5 @@
 import React from 'react'
-import { InitialState, CoursePageState, User, Course } from '../../../types/InitialState'
+import { InitialState, CoursePageState, User, Course, AdminPageState } from '../../../types/InitialState'
 import { connect } from 'react-redux'
 import { mapChildren } from 'idyll-component-children'
 import { pageStateReducer } from '../../../reducers/pageStateReducer'
@@ -43,11 +43,11 @@ const CourseSection = (props: {
   return props.sectionId === props.courseTabId ? <div id="CourseSection">{arr2}</div> : <div style={{ display: 'none' }} />
 }
 
-const mapStateToProps = (state: { pageState: InitialState; coursePageState: CoursePageState; user: User | null }) => ({
+const mapStateToProps = (state: { pageState: InitialState; coursePageState: CoursePageState; user: User | null, adminPageState: AdminPageState }) => ({
   courseTabId: Number(state.pageState.pageParams.pathParams.tabId),
   coursePageState: state.coursePageState,
   user: state.pageState.pageParams.user,
-  ownCourses: state.coursePageState.ownCourses,
+  ownCourses: state.adminPageState.ownCourses,
   courseId: state.pageState.pageParams.pathParams.id,
   courseVersion: state.pageState.pageParams.pathParams.version,
   allCourses: state.pageState.courses

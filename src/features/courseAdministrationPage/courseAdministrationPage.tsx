@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import Chapter from '../coursePage/components/Chapter'
 import Scoreboard from './components/Scoreboard'
 import NewInstanceForm from './components/NewInstanceForm'
-import { ExercisesState, Course, CoursePageState, InitialState } from './../../types/InitialState'
-import { UserCourse } from '../../types/jsontypes'
+import { ExercisesState, Course, CoursePageState, InitialState, AdminPageState } from './../../types/InitialState'
+import { UserCourse, TeachingInstance } from '../../types/jsontypes'
 import { ThunkDispatch } from 'redux-thunk'
-import { fetchTeacherCourses as fetchTeacherCoursesAction } from '../../reducers/actions/courseActions'
+import { fetchTeacherCourses as fetchTeacherCoursesAction, createTeacherCourse as createTeacherCourseAction } from '../../reducers/actions/adminPageActions'
 
 export function courseAdministrationPage() {
 
@@ -75,14 +75,14 @@ export function courseAdministrationPage() {
   const mapStateToProps = ({
     exercises,
     pageState,
-    coursePageState
+    adminPageState
   }: {
     exercises: ExercisesState
     pageState: InitialState
-    allCourses: Course[]
-    coursePageState: CoursePageState
+    allCourses: Course[],
+    adminPageState: AdminPageState
   }) => {
-    return { exercises, allCourses: pageState.courses, teacherCourses: coursePageState.teacherCourses }
+    return { exercises, allCourses: pageState.courses, teacherCourses: adminPageState.teacherCourses }
   }
 
   const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({

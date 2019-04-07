@@ -1,6 +1,6 @@
 import { User } from '../../types/InitialState'
 import userService from '../../services/userService'
-import { ThunkAction, ThunkDispatch } from 'redux-thunk'
+import { ThunkAction } from 'redux-thunk'
 import { AnyAction } from 'redux'
 
 export class Action extends String {}

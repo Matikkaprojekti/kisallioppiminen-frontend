@@ -25,11 +25,14 @@ export interface Course {
 
 export interface CoursePageState {
   selectedCourseVersion: string | null
-  ownCourses: UserCourse[]
-  teacherCourses: UserCourse[]
 }
 
 export interface ExercisesState {
   idToNumber: { [s: string]: string }
   courseExercises: { [s: string]: string[] }
+}
+
+export interface AdminPageState {
+  ownCourses: UserCourse[],
+  teacherCourses: UserCourse[]
 }

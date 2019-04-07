@@ -1,5 +1,5 @@
 import React from 'react'
-import { InitialState, CoursePageState, ExercisesState } from '../types/InitialState'
+import { InitialState, CoursePageState, ExercisesState, AdminPageState } from '../types/InitialState'
 import Footer from './baseComponents/Footer'
 import Navigation from './baseComponents/Navigation'
 import Hero from './baseComponents/Hero'
@@ -9,7 +9,7 @@ import { initStore } from '../reducers/store'
 import { Store } from 'redux'
 import { fetchUser } from '../reducers/actions/pageStateActions'
 
-export function createApp(initialState: { pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState }) {
+export function createApp(initialState: { pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState, adminPageState: AdminPageState }) {
   const store = initStore(initialState)
   watchPageChanges(store)
   resolveTokenCallback(store)
