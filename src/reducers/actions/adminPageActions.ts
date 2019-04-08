@@ -2,6 +2,7 @@ import { ThunkAction } from 'redux-thunk'
 import { AnyAction } from 'redux'
 import courseService from '../../services/courseService'
 import { TeachingInstance, UserCourse } from '../../types/jsontypes'
+import { setErrorMessage } from './pageStateActions'
 
 export const FETCH_TEACHER_COURSES = 'FETCH_TEACHER_COURSES'
 export const SET_TEACHER_COURSES = 'SET_TEACHER_COURSES'
@@ -61,5 +62,5 @@ export const createTeacherCourse = (teachingInstance: TeachingInstance): ThunkAc
       .then(createdInstance => {
         dispatch(addTeacherCourse(createdInstance))
         return createdInstance
-      })
+      }).catch(e => dispatch(setErrorMessage(e.message)))
 }

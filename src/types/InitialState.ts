@@ -3,6 +3,10 @@ import { UserCourse } from './jsontypes'
 export interface InitialState {
   courses: Course[]
   pageParams: PageParams
+  error: {
+    message: string,
+    visible: boolean
+  }
 }
 
 export interface User {

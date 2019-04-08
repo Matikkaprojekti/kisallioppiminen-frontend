@@ -8,6 +8,7 @@ import { Provider, connect } from 'react-redux'
 import { initStore } from '../reducers/store'
 import { Store } from 'redux'
 import { fetchUser } from '../reducers/actions/pageStateActions'
+import Error from './baseComponents/Error'
 
 export function createApp(initialState: { pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState, adminPageState: AdminPageState }) {
   const store = initStore(initialState)
@@ -20,10 +21,12 @@ export function createApp(initialState: { pageState: InitialState; coursePageSta
 
   const app = (props: { initialState: InitialState }) => {
     const { initialState: state } = props
+    const { message, visible } = state.error
     const { component, pageName } = resolvePageToRender(state)
     return (
       <React.Fragment>
         <Navigation />
+        <Error message={message} isVisible={visible} />
         <Hero location={pageName} />
         {component}
         <Footer />

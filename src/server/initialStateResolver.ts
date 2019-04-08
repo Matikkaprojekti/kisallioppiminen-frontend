@@ -83,6 +83,10 @@ export function resolveInitialState(path: string): { pageState: InitialState; co
         path,
         pathParams: {},
         user: null
+      },
+      error: {
+        message: '',
+        visible: false
       }
     },
     coursePageState: {
