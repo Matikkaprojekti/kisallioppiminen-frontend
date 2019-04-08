@@ -15,8 +15,8 @@ export const pageStateReducer = (state: InitialState | null = null, action: { ty
           }
         }
       }
+      break
     case 'CHANGE_PAGE':
-      console.log(data)
       if (data === 'http://localhost:8080/users/auth') {
         return state
       }
@@ -31,6 +31,14 @@ export const pageStateReducer = (state: InitialState | null = null, action: { ty
               path: data
             }
           }
+        }
+      }
+      break
+    case 'TOGGLE_ERROR':
+      if (state) {
+        return {
+          ...state,
+          error: data
         }
       }
   }

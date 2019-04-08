@@ -773,3 +773,38 @@ ul {
 .newInstanceForm-visible tr {
   height: 40px;
 }
+
+.global_error {
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  z-index: 100;
+  top: 20px;
+  left: 20px;
+  transform: translateX(-400px);
+  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: white;
+  border-left: 2px solid rgb(229, 0, 0);
+  border-radius: 5px;
+
+  &-visible {
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    z-index: 100;
+    top: 20px;
+    left: 20px;
+    background-color: white;
+    border-left: 3px solid rgb(229, 0, 0);
+    border-radius: 5px;
+    transform: translateX(30px);
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
+
+.error-text {
+  color: rgba(0, 0, 0, 0.8);
+  margin-left: 20px;
+  font-size: 20px;
+}

@@ -3,6 +3,10 @@ import { UserCourse } from './jsontypes'
 export interface InitialState {
   courses: Course[]
   pageParams: PageParams
+  error: {
+    message: string,
+    visible: boolean
+  }
 }
 
 export interface User {
@@ -25,11 +29,14 @@ export interface Course {
 
 export interface CoursePageState {
   selectedCourseVersion: string | null
-  ownCourses: UserCourse[]
-  teacherCourses: UserCourse[]
 }
 
 export interface ExercisesState {
   idToNumber: { [s: string]: string }
   courseExercises: { [s: string]: string[] }
+}
+
+export interface AdminPageState {
+  ownCourses: UserCourse[],
+  teacherCourses: UserCourse[]
 }

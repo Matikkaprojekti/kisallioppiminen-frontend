@@ -19,7 +19,7 @@ import Picture from './components/Picture'
 import Math from './components/Math'
 import NavBottom from '../baseComponents/NavBottom'
 import { ThunkDispatch } from 'redux-thunk'
-import { fetchOwnCourses as fetchOwnCoursesAction } from '../../reducers/actions/courseActions'
+import { fetchOwnCourses as fetchOwnCoursesAction } from '../../reducers/actions/adminPageActions'
 
 export function coursePage() {
   const availableComponents = {
