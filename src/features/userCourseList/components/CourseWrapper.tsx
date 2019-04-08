@@ -34,7 +34,7 @@ const CourseWrapper = (props: any) => {
         <label className="userCourseListPage-date">
           {format(props.startdate, 'DD-MM-YYYY')} - {format(props.enddate, 'DD-MM-YYYY')}
         </label>
-        <button className="userCourseListPage-button" onClick={props.leaveInstance}>
+        <button className="userCourseListPage-button" onClick={() => props.leaveInstance(props.coursekey)}>
           Poistu kurssilta
         </button>
         <label className="userCourseListPage-key">{props.coursekey}</label>

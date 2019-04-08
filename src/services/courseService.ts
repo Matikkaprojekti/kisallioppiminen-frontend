@@ -14,7 +14,7 @@ const joinTeachingInstanceService = async (coursekey: string): Promise<any> => {
 }
 
 const leaveTeachingInstanceService = async (coursekey: string): Promise<any> => {
-  const response = await HTTP.delete(`${baseUrl}/teachinginstances/${coursekey}`)
+  const response = await HTTP.delete(`${baseUrl}/teachinginstances/${coursekey}`, getRequestConfig())
   return response.data
 }
 

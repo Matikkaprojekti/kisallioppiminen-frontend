@@ -16,33 +16,15 @@ interface Props {
   user: User
   ownCourses: UserCourse[]
   joinTeachingInstance: (coursekey: string) => Promise<void>
+  leaveTeachingInstance: (coursekey: string) => Promise<void>
   fetchOwnCourses: () => Promise<void>
   exercises: ExercisesState
   allCourses: Course[]
 }
 
 export function userCourseListPage() {
-  function leaveInstance(event: any) {
-    event.preventDefault()
-    console.log('leaveInstance')
-    console.log(event)
-  }
-  const addCourses = (courses: UserCourse[]) =>
-    courses.map(course => (
-      <CourseWrapper
-        leaveInstance={leaveInstance}
-        key={course.owner_id}
-        header={course.name}
-        coursekey={course.coursekey}
-        startdate={course.startdate}
-        enddate={course.enddate}
-      >
-        <Scoreboard course={course} />
-      </CourseWrapper>
-    ))
-
   const app = (props: Props) => {
-    const { user, ownCourses, fetchOwnCourses, exercises, joinTeachingInstance } = props
+    const { ownCourses, fetchOwnCourses, exercises, joinTeachingInstance, leaveTeachingInstance } = props
 
     useEffect(() => {
       fetchOwnCourses()
@@ -52,6 +34,23 @@ export function userCourseListPage() {
       event.preventDefault()
       joinTeachingInstance(event.target.courseKey.value)
     }
+    function leaveInstance(coursekey: string) {
+      console.log('kurssiavain = ', coursekey)
+      leaveTeachingInstance(coursekey)
+    }
+    const addCourses = (courses: UserCourse[]) =>
+      courses.map(course => (
+        <CourseWrapper
+          leaveInstance={leaveInstance}
+          key={course.owner_id}
+          header={course.name}
+          coursekey={course.coursekey}
+          startdate={course.startdate}
+          enddate={course.enddate}
+        >
+          <Scoreboard course={course} />
+        </CourseWrapper>
+      ))
 
     console.log(ownCourses)
     const betterCourses = ownCourses.map(c => {
@@ -101,7 +100,7 @@ export function userCourseListPage() {
     joinTeachingInstance: async (coursekey: string) => {
       await dispatch(joinTeachingInstanceAction(coursekey))
     },
-    leaveInstance: async (coursekey: string) => {
+    leaveTeachingInstance: async (coursekey: string) => {
       await dispatch(leaveTeachingInstanceAction(coursekey))
     },
     fetchOwnCourses: async () => {
