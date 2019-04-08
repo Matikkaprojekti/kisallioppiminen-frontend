@@ -11,3 +11,8 @@
 4. Suorita `npm install`
 5. Suorita `npm run watch`
 6. Mene [http://localhost:3000/](http://localhost:3000/)
+
+# Ympäristö
+
+`npm run watch` käynnistää ympäristön `dev`inä. Tämä vaatii että käytössä on proxy ja mahdollisesti backend, jos proxy on käytössä `dev` -ympäristö.
+`npm run run-test` käynnistää ympäristön `test`inä. Tämä ei vaadi mitään muuta pystyttämistä.

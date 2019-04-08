@@ -40,14 +40,15 @@ export function userCourseListPage() {
 
     console.log(ownCourses)
     const betterCourses = ownCourses.map(c => {
-      const courseId = props.allCourses.filter(c2 => c.coursematerial_name === c2.courseName)[0].id
+      const courseId = props.allCourses.filter(c2 => c.coursematerial_name === c2.courseName)
       if (
+        courseId[0] !== undefined &&
         exercises !== null &&
         exercises.courseExercises !== null &&
         exercises.idToNumber !== null &&
-        exercises.courseExercises[`${courseId} ${c.version}`] !== undefined
+        exercises.courseExercises[`${courseId[0].id} ${c.version}`] !== undefined
       ) {
-        const exerciseNumbers = exercises.courseExercises[`${courseId} ${c.version}`].map(e => exercises.idToNumber[e])
+        const exerciseNumbers = exercises.courseExercises[`${courseId[0].id} ${c.version}`].map(e => exercises.idToNumber[e])
 
         const students = c.students.map(s => ({ ...s, exercises: s.exercises.map(ex => ({ ...ex, uuid: exercises.idToNumber[ex.uuid] })) }))
 

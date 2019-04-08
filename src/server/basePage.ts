@@ -3,18 +3,23 @@ export const createTemplate = ({
   body,
   initialState,
   isStatic,
-  styleSource
+  styleSource,
+  env
 }: {
   title: string
   body: string
   initialState: string
   isStatic?: boolean
   styleSource: string
+  env: string
 }) => {
   return `
   <!DOCTYPE html>
   <html>
     <div style="display: none" id="initial-state">${initialState}</div>
+    <script>
+      window.__koenv = "${env}"
+    </script>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>${title}</title>

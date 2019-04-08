@@ -16,35 +16,69 @@ export function resolveInitialState(path: string): { pageState: InitialState; co
 
   const idToNumber: { [index: string]: string } = {}
   const courseExercises: { [index: string]: string[] } = {}
-  courses.forEach(c => {
-    c.courseContent.forEach(cv => {
+  const newCourses = courses.map(c => {
+    const newCourseContent = c.courseContent.map(cv => {
       courseExercises[`${c.id} ${cv.version}`] = []
       let sectionCount = -1
       let exerciseCount = 0
+      let theoremCount = 0
       const quickLinks: string[] = []
-      const contentByWord = cv.content
-        .replace('\n', ' ')
+      const contentByLine = cv.content
         .replace('[', ' [')
-        .split(' ')
-      contentByWord.forEach(word => {
-        if (word.includes('[CourseSection')) {
-          sectionCount++
-          exerciseCount = 0
-        }
+        .replace(']', ']\n')
+        .split('\n')
 
-        if (word.includes('UUID:')) {
-          exerciseCount++
-          const UUID = word.substring(6, word.length - 1)
-          courseExercises[`${c.id} ${cv.version}`].push(UUID)
-          idToNumber[UUID] = `${sectionCount}.${exerciseCount}`
-        }
-      })
+      const newContent = contentByLine
+        .map(line => {
+          if (line.includes('[Theorem')) {
+            theoremCount++
+            const firstA = line.indexOf('\'')
+            const firstQ = line.indexOf('"')
+            let start = 0
+            let end = 0
+            let headerer = ''
+            if (firstQ < 0 || (firstA < firstQ && firstA > -1)) {
+              start = firstA
+              end = line.lastIndexOf('\'')
+              headerer = `header: ${line.substring(start, end)} (teoreema ${theoremCount})'`
+            } else {
+              start = firstQ
+              end = line.lastIndexOf('"')
+              headerer = `header: ${line.substring(start, end)} (teoreema ${theoremCount})"`
+            }
+
+            const realLine = `[Theorem ${headerer}]`
+            return realLine
+          }
+
+          const contentByWord = line.split(' ')
+          contentByWord.forEach(word => {
+            if (word.includes('[CourseSection')) {
+              sectionCount++
+              exerciseCount = 0
+            }
+
+            if (word.includes('UUID:')) {
+              exerciseCount++
+              const UUID = word.substring(6, word.length - 1)
+              courseExercises[`${c.id} ${cv.version}`].push(UUID)
+              idToNumber[UUID] = `${sectionCount}.${exerciseCount}`
+            }
+          })
+          return line
+        })
+        .join('\n')
+        .replace(']\n', ']')
+
+      return { ...cv, content: newContent }
     })
+
+    return { ...c, courseContent: newCourseContent }
   })
 
   return {
     pageState: {
-      courses: courses || '',
+      courses: newCourses || '',
       pageParams: {
         path,
         pathParams: {},

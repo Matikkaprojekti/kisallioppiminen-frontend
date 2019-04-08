@@ -15,25 +15,25 @@ const joinTeachingInstanceService = async (coursekey: string): Promise<any> => {
 }
 
 const ownCourses = async (): Promise<any> => {
-  const { data } = await HTTP.get(`${baseUrl}/teachinginstances?teacher=false`)
+  const { data } = await HTTP.get(`${baseUrl}/teachinginstances?teacher=false`, getRequestConfig())
   console.log(data)
   return data
 }
 
 const teacherCourses = async (): Promise<any> => {
-  const { data } = await HTTP.get(`${baseUrl}/teachinginstances?teacher=true`)
+  const { data } = await HTTP.get(`${baseUrl}/teachinginstances?teacher=true`, getRequestConfig())
   console.log(data)
   return data
 }
 
 const createTeachingInstance = async (instance: TeachingInstance): Promise<any> => {
-  const response = await HTTP.post(`${baseUrl}/teachinginstances`, instance)
+  const response = await HTTP.post(`${baseUrl}/teachinginstances`, instance, getRequestConfig())
   console.log(response)
   return response.data
 }
 
-const trafficlight = async (courseKey: string, UUID: string, status: string): Promise<any> => {
-  const { data } = await HTTP.put(`${baseUrl}/trafficlights/${UUID}`, { courseKey, status }, getRequestConfig())
+const trafficlight = async (coursekey: string, UUID: string, status: string): Promise<any> => {
+  const { data } = await HTTP.put(`${baseUrl}/trafficlights/${UUID}`, { coursekey, status }, getRequestConfig())
   console.log(data)
   return data
 }

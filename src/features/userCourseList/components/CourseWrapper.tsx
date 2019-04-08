@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import { mapChildren } from 'idyll-component-children'
+import format from 'date-fns/format'
 
 interface Props {
   header: string
@@ -31,7 +32,7 @@ const CourseWrapper = (props: any) => {
       <div className="chapter" onClick={toggleVisibility}>
         <label className="userCourseListPage-text">{props.header}</label>
         <label className="userCourseListPage-date">
-          {props.startdate} - {props.enddate}
+          {format(props.startdate, 'DD-MM-YYYY')} - {format(props.enddate, 'DD-MM-YYYY')}
         </label>
         <button className="userCourseListPage-button">Poistu kurssilta</button>
         <label className="userCourseListPage-key">{props.coursekey}</label>

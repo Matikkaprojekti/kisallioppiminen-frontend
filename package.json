@@ -1,6 +1,7 @@
 {
   "name": "kisallioppiminen-frontend",
   "dependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/idyll-compiler": "^3.1.1",
     "@types/idyll-document": "^2.9.0",
     "@types/ramda": "^0.25.50",
@@ -72,12 +73,12 @@
   },
   "scripts": {
     "start": "webpack --env.platform=web && webpack --env.platform=server && webpack --env.platform=styles && node ./dist/js/server",
-    "watch": "nodemon",
+    "watch": "KO_ENV=dev nodemon",
     "build-web": "webpack --env.platform=web",
-    "run-test": "IS_BUILD=false webpack --env.platform=web && webpack --env.platform=server && webpack --env.platform=styles && node ./dist/js/server",
+    "run-test": "webpack --env.platform=web && webpack --env.platform=server && webpack --env.platform=styles && IS_BUILD=false KO_ENV=test node ./dist/js/server",
     "test": "./node_modules/.bin/cypress run --record",
     "build-server": "webpack --env.platform=server",
     "lint": "tslint -c tslint.json 'src/**/*.ts?(x)'",
-    "build": "./node_modules/.bin/ts-node ./scripts/buildStaticSite.ts && webpack --env.platform=static && webpack --env.platform=styles-static"
+    "build": "IS_BUILD=true ./node_modules/.bin/ts-node ./scripts/buildStaticSite.ts && webpack --env.platform=static && webpack --env.platform=styles-static"
   }
 }
