@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import Chapter from '../coursePage/components/Chapter'
+import AdminPageChapter from './components/AdminPageChapter'
 import Scoreboard from './components/Scoreboard'
 import NewInstanceForm from './components/NewInstanceForm'
 import { ExercisesState, Course, CoursePageState, InitialState } from './../../types/InitialState'
@@ -9,7 +9,6 @@ import { ThunkDispatch } from 'redux-thunk'
 import { fetchTeacherCourses as fetchTeacherCoursesAction } from '../../reducers/actions/courseActions'
 
 export function courseAdministrationPage() {
-
   const [open, setOpen] = useState(false)
   const formClass = open ? 'newInstanceForm-visible' : 'newInstanceForm-hidden'
   const buttonText = open ? 'Sulje lomake' : 'Uusi kurssi'
@@ -67,9 +66,9 @@ export function courseAdministrationPage() {
 
   const addCourses = (betterCourses: UserCourse[]) =>
     betterCourses.map((course: UserCourse) => (
-      <Chapter key={`${course.id} ${course.version}`} header={course.name}>
+      <AdminPageChapter key={`${course.id} ${course.version}`} header={course.name} coursekey={course.coursekey}>
         <Scoreboard course={course} />
-      </Chapter>
+      </AdminPageChapter>
     ))
 
   const mapStateToProps = ({
