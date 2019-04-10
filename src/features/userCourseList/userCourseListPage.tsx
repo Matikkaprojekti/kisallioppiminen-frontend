@@ -4,10 +4,9 @@ import CourseWrapper from './components/CourseWrapper'
 import Scoreboard from '../courseAdministrationPage/components/Scoreboard'
 import { UserCourse } from '../../types/jsontypes'
 import JoinTeachingInstance from './components/JoinTeachingInstance'
-import courseService from './../../services/courseService'
-import { InitialState, CoursePageState, ExercisesState, Course, User } from '../../types/InitialState'
+import { InitialState, CoursePageState, ExercisesState, Course, User, AdminPageState } from '../../types/InitialState'
 import { ThunkDispatch } from 'redux-thunk'
-import { fetchOwnCourses as fetchOwnCoursesAction, joinTeachingInstance as joinTeachingInstanceAction } from '../../reducers/actions/courseActions'
+import { fetchOwnCourses as fetchOwnCoursesAction, joinTeachingInstance as joinTeachingInstanceAction } from '../../reducers/actions/adminPageActions'
 
 interface Props {
   user: User
@@ -69,9 +68,9 @@ export function userCourseListPage() {
     )
   }
 
-  const mapStateToProps = (state: { userState: User; pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState }) => ({
+  const mapStateToProps = (state: { userState: User; pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState, adminPageState: AdminPageState }) => ({
     user: state.userState,
-    ownCourses: state.coursePageState.ownCourses,
+    ownCourses: state.adminPageState.ownCourses,
     exercises: state.exercises,
     allCourses: state.pageState.courses
   })

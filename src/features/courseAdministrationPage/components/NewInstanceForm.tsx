@@ -1,10 +1,12 @@
 import React, { useState, FormEvent } from 'react'
 import { connect } from 'react-redux'
-import courseService from './../../../services/courseService'
 import { InitialState, Course } from '../../../types/InitialState'
+import { ThunkDispatch } from 'redux-thunk'
+import { TeachingInstance } from '../../../types/jsontypes'
+import { createTeacherCourse as createTecherCourseAction } from '../../../reducers/actions/adminPageActions'
 
 export default function NewInstanceForm() {
-  const form = ({ pageState }: { pageState: InitialState }) => {
+  const form = ({ pageState, createTeacherCourse }: { pageState: InitialState, createTeacherCourse: (teachingInstance: TeachingInstance) => Promise<void>}) => {
     const [selectedCourse, setSelectedCourse] = useState(pageState.courses[0])
     const [selectedVersion, setSelectedVersion] = useState(pageState.courses[0].courseContent[0].version)
     const [instanceName, setInstanceName] = useState('')
@@ -38,7 +40,7 @@ export default function NewInstanceForm() {
       console.log(instance)
       console.log('vastaus:')
 
-      courseService.createTeachingInstance(instance)
+      createTeacherCourse(instance)
 
       clearForm()
     }
@@ -117,6 +119,12 @@ export default function NewInstanceForm() {
     pageState: state.pageState
   })
 
-  const ConnectedNewInstanceForm = connect(mapStateToProps)(form)
+  const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
+    createTeacherCourse: async (teachingInstance: TeachingInstance) => {
+      await dispatch(createTecherCourseAction(teachingInstance))
+    }
+  })
+
+  const ConnectedNewInstanceForm = connect(mapStateToProps, mapDispatchToProps)(form)
   return <ConnectedNewInstanceForm />
 }
