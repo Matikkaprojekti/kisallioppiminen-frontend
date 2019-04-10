@@ -39,7 +39,6 @@ export const joinTeachingInstance = (coursekey: string): ThunkAction<Promise<any
 export const leaveTeachingInstance = (coursekey: string): any => {
   return async (dispatch: any) =>
     courseService.leaveTeachingInstanceService(coursekey).then(() => {
-      console.log('menee thenii')
       dispatch(removeTeachingInstance(coursekey))
       return null
     })
