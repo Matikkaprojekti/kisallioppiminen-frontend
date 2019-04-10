@@ -1,12 +1,5 @@
 import { UserCourse } from './jsontypes'
 
-export interface ContentConfig {
-  id: string
-  courseName: string
-  quickLinks: string[]
-  contentFiles: Array<{ version: string; path: string }>
-}
-
 export interface InitialState {
   courses: Course[]
   pageParams: PageParams

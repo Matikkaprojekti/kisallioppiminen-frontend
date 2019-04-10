@@ -4,7 +4,7 @@ import CourseWrapper from './components/CourseWrapper'
 import Scoreboard from '../courseAdministrationPage/components/Scoreboard'
 import { UserCourse } from '../../types/jsontypes'
 import JoinTeachingInstance from './components/JoinTeachingInstance'
-import { InitialState, CoursePageState, ExercisesState, Course, User, AdminPageState, ContentConfig } from '../../types/InitialState'
+import { InitialState, CoursePageState, ExercisesState, Course, User, AdminPageState } from '../../types/InitialState'
 import { ThunkDispatch } from 'redux-thunk'
 import {
   fetchOwnCourses as fetchOwnCoursesAction,

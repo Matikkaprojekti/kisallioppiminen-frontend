@@ -1,8 +1,14 @@
 import fs from 'fs'
-import { InitialState, ContentConfig, Course, CoursePageState, ExercisesState, AdminPageState } from '../types/InitialState'
+import { InitialState, Course, CoursePageState, ExercisesState, AdminPageState } from '../types/InitialState'
+
+export interface ContentConfig {
+  id: string
+  courseName: string
+  quickLinks: string[]
+  contentFiles: Array<{ version: string; path: string }>
+}
 
 const contentConfig: ContentConfig[] = JSON.parse(fs.readFileSync('./content/content_config.json', 'utf8'))
-// const idyllConfig: ContentConfig = JSON.parse(fs.readFileSync('./content/index.idl', 'utf-8'))
 
 export function resolveInitialState(
   path: string
