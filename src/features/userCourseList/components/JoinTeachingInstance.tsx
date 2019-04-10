@@ -9,12 +9,12 @@ const JoinCourse = (props: Props) => {
     <div key={Math.random() * 10000}>
       <form onSubmit={event => props.handle(event)}>
         <div className="userCourseListPage-header">
-          <label className="userCourseListPage-text">Lisää uusi kurssi:</label>
+          <label className="userCourseListPage-text">Liity kurssille:</label>
         </div>
         <div className="chapter-content">
           <input name="courseKey" className="userCourseListPage-enter" type="text" placeholder="Kurssiavain" />
           <button className="userCourseListPage-button" type="submit">
-            Liity kurssille
+            Liity
           </button>
         </div>
       </form>

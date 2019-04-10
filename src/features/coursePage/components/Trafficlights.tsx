@@ -4,7 +4,7 @@ import courseService from '../../../services/courseService'
 
 export default function Trafficlights({ coursekey, UUID }: { coursekey: string; UUID: string }) {
   const handleClick = (status: string) => {
-    console.log('painettu', status)
+    // console.log('painettu', status)
     courseService.trafficlight(coursekey, UUID, status)
   }
   return (

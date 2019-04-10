@@ -2,7 +2,7 @@ import React from 'react'
 import Link from '../baseComponents/Link'
 
 export default function Hero(location: any) {
-  console.log(location)
+  // console.log(location)
 
   return (
     <header className="hero">
