@@ -4,7 +4,7 @@ export interface InitialState {
   courses: Course[]
   pageParams: PageParams
   error: {
-    message: string,
+    message: string
     visible: boolean
   }
 }
@@ -37,6 +37,6 @@ export interface ExercisesState {
 }
 
 export interface AdminPageState {
-  ownCourses: UserCourse[],
+  ownCourses: UserCourse[]
   teacherCourses: UserCourse[]
 }

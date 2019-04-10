@@ -14,6 +14,7 @@
     "outDir": "./dist/",
     "rootDirs": ["./src", "./scripts"],
     "lib": ["es6", "dom", "esnext"],
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "typeRoots": ["./node_modules/@types", "./src/types/"]

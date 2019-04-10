@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { InitialState, Course, CoursePageState, ExercisesState, AdminPageState } from '../types/InitialState'
 
-interface ContentConfig {
+export interface ContentConfig {
   id: string
   courseName: string
   quickLinks: string[]
@@ -9,9 +9,10 @@ interface ContentConfig {
 }
 
 const contentConfig: ContentConfig[] = JSON.parse(fs.readFileSync('./content/content_config.json', 'utf8'))
-// const idyllConfig: ContentConfig = JSON.parse(fs.readFileSync('./content/index.idl', 'utf-8'))
 
-export function resolveInitialState(path: string): { pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState, adminPageState: AdminPageState } {
+export function resolveInitialState(
+  path: string
+): { pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState; adminPageState: AdminPageState } {
   const courses = getCourses()
 
   const idToNumber: { [index: string]: string } = {}
@@ -90,7 +91,7 @@ export function resolveInitialState(path: string): { pageState: InitialState; co
       }
     },
     coursePageState: {
-      selectedCourseVersion: null,
+      selectedCourseVersion: null
     },
     exercises: {
       idToNumber,
