@@ -40,12 +40,13 @@ export function userCourseListPage() {
     const addCourses = (courses: UserCourse[]) =>
       courses.map(course => (
         <CourseWrapper
-          leaveInstance={leaveInstance}
-          key={course.coursekey}
           header={course.name}
+          material={course.coursematerial_name}
+          key={course.coursekey}
           coursekey={course.coursekey}
           startdate={course.startdate}
           enddate={course.enddate}
+          leaveInstance={leaveInstance}
         >
           <Scoreboard course={course} />
         </CourseWrapper>

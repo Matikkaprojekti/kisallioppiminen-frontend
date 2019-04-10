@@ -16,7 +16,8 @@ export const adminPageReducer = (state: AdminPageState | null = null, action: { 
       break
     case 'ADD_OWN_COURSE':
       if (state) {
-        return R.merge(state, { ownCourses: [...state.ownCourses, data] })
+        // return R.merge(state, { ownCourses: [...state.ownCourses, data] })
+        return R.merge(state, { ownCourses: R.insert(0, data, state.ownCourses) })
       }
       break
     case 'ADD_TEACHER_COURSE':
