@@ -9,8 +9,12 @@ const HTTP = axios.create({
 })
 
 const joinTeachingInstanceService = async (coursekey: string): Promise<any> => {
-  const response = await HTTP.patch(`${baseUrl}/teachinginstances`, { coursekey }, getRequestConfig())
-  return response.data
+  try {
+    const response = await HTTP.patch(`${baseUrl}/teachinginstances`, { coursekey }, getRequestConfig())
+    return response.data
+  } catch (e) {
+    throw new Error(e.response.data.error)
+  }
 }
 
 const leaveTeachingInstanceService = async (coursekey: string): Promise<any> => {

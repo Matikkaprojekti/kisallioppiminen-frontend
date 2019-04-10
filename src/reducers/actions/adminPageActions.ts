@@ -46,11 +46,15 @@ export const removeUsersInstance = (coursekey: string) => ({
 })
 
 export const joinTeachingInstance = (coursekey: string): ThunkAction<Promise<any[]>, {}, {}, AnyAction> => {
-  return async dispatch =>
-    courseService.joinTeachingInstanceService(coursekey).then((teachingInstance: any) => {
-      dispatch(addOwnCourse(teachingInstance))
-      return teachingInstance
-    })
+  return async dispatch => {
+    return courseService
+      .joinTeachingInstanceService(coursekey)
+      .then((teachingInstance: any) => {
+        dispatch(addOwnCourse(teachingInstance))
+        return teachingInstance
+      })
+      .catch(e => dispatch(setErrorMessage(e.message)))
+  }
 }
 export const leaveTeachingInstance = (coursekey: string): any => {
   return async (dispatch: any) =>
