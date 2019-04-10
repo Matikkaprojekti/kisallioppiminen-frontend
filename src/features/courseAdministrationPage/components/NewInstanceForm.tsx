@@ -12,7 +12,9 @@ export default function NewInstanceForm() {
     const [instanceName, setInstanceName] = useState('')
     const [courseKey, setCourseKey] = useState('')
     const [startDate, setStartDate] = useState(new Date().toISOString().split('T')[0])
-    const [endDate, setEndDate] = useState(new Date().toISOString().split('T')[0])
+    const endDt = new Date()
+    endDt.setDate(endDt.getDate() + 30)
+    const [endDate, setEndDate] = useState(endDt.toISOString().split('T')[0])
 
     const courseSelectorListener = (selection: string) => {
       const selected = pageState.courses.find(course => course.courseName === selection)
@@ -49,7 +51,7 @@ export default function NewInstanceForm() {
       setSelectedVersion(selectedCourse.courseContent[0].version)
       setCourseKey('')
       setStartDate(new Date().toISOString().split('T')[0])
-      setEndDate(new Date().toISOString().split('T')[0])
+      setEndDate(endDt.toISOString().split('T')[0])
     }
 
     return (
