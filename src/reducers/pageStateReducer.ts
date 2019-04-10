@@ -4,7 +4,6 @@ export const pageStateReducer = (state: InitialState | null = null, action: { ty
   const { data } = action
   switch (action.type) {
     case 'SET_USER':
-      console.log(action)
       if (state) {
         const { pageParams } = state
         return {

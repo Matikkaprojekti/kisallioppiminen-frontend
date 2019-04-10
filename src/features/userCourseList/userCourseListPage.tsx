@@ -6,38 +6,51 @@ import { UserCourse } from '../../types/jsontypes'
 import JoinTeachingInstance from './components/JoinTeachingInstance'
 import { InitialState, CoursePageState, ExercisesState, Course, User, AdminPageState } from '../../types/InitialState'
 import { ThunkDispatch } from 'redux-thunk'
-import { fetchOwnCourses as fetchOwnCoursesAction, joinTeachingInstance as joinTeachingInstanceAction } from '../../reducers/actions/adminPageActions'
+import {
+  fetchOwnCourses as fetchOwnCoursesAction,
+  joinTeachingInstance as joinTeachingInstanceAction,
+  leaveTeachingInstance as leaveTeachingInstanceAction
+} from '../../reducers/actions/adminPageActions'
 
 interface Props {
   user: User
   ownCourses: UserCourse[]
   joinTeachingInstance: (coursekey: string) => Promise<void>
+  leaveTeachingInstance: (coursekey: string) => Promise<void>
   fetchOwnCourses: () => Promise<void>
   exercises: ExercisesState
   allCourses: Course[]
 }
 
 export function userCourseListPage() {
-  const addCourses = (courses: UserCourse[]) =>
-    courses.map(course => (
-      <CourseWrapper key={course.owner_id} header={course.name} coursekey={course.coursekey} startdate={course.startdate} enddate={course.enddate}>
-        <Scoreboard course={course} />
-      </CourseWrapper>
-    ))
-
   const app = (props: Props) => {
-    const { user, ownCourses, fetchOwnCourses, exercises, joinTeachingInstance } = props
+    const { ownCourses, fetchOwnCourses, exercises, joinTeachingInstance, leaveTeachingInstance } = props
 
     useEffect(() => {
       fetchOwnCourses()
     }, [])
 
-    function handle(event: any) {
+    function joinInstance(event: any) {
       event.preventDefault()
       joinTeachingInstance(event.target.courseKey.value)
     }
+    function leaveInstance(coursekey: string) {
+      leaveTeachingInstance(coursekey)
+    }
+    const addCourses = (courses: UserCourse[]) =>
+      courses.map(course => (
+        <CourseWrapper
+          leaveInstance={leaveInstance}
+          key={course.coursekey}
+          header={course.name}
+          coursekey={course.coursekey}
+          startdate={course.startdate}
+          enddate={course.enddate}
+        >
+          <Scoreboard course={course} />
+        </CourseWrapper>
+      ))
 
-    console.log(ownCourses)
     const betterCourses = ownCourses.map(c => {
       const courseId = props.allCourses.filter(c2 => c.coursematerial_name === c2.courseName)
       if (
@@ -62,13 +75,19 @@ export function userCourseListPage() {
 
     return (
       <div className="courseAdministrationPageContainer">
-        <JoinTeachingInstance handle={handle} />
+        <JoinTeachingInstance handle={joinInstance} />
         {addCourses(betterCourses)}
       </div>
     )
   }
 
-  const mapStateToProps = (state: { userState: User; pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState, adminPageState: AdminPageState }) => ({
+  const mapStateToProps = (state: {
+    userState: User
+    pageState: InitialState
+    coursePageState: CoursePageState
+    exercises: ExercisesState
+    adminPageState: AdminPageState
+  }) => ({
     user: state.userState,
     ownCourses: state.adminPageState.ownCourses,
     exercises: state.exercises,
@@ -78,6 +97,9 @@ export function userCourseListPage() {
   const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
     joinTeachingInstance: async (coursekey: string) => {
       await dispatch(joinTeachingInstanceAction(coursekey))
+    },
+    leaveTeachingInstance: async (coursekey: string) => {
+      await dispatch(leaveTeachingInstanceAction(coursekey))
     },
     fetchOwnCourses: async () => {
       await dispatch(fetchOwnCoursesAction())

@@ -13,6 +13,11 @@ const joinTeachingInstanceService = async (coursekey: string): Promise<any> => {
   return response.data
 }
 
+const leaveTeachingInstanceService = async (coursekey: string): Promise<any> => {
+  const response = await HTTP.delete(`${baseUrl}/teachinginstances/${coursekey}`, getRequestConfig())
+  return response.data
+}
+
 const ownCourses = async (): Promise<any> => {
   const { data } = await HTTP.get(`${baseUrl}/teachinginstances?teacher=false`, getRequestConfig())
   return data
@@ -45,4 +50,4 @@ const getRequestConfig = () => {
   }
 }
 
-export default { joinTeachingInstanceService, createTeachingInstance, ownCourses, trafficlight, teacherCourses }
+export default { joinTeachingInstanceService, leaveTeachingInstanceService, createTeachingInstance, ownCourses, trafficlight, teacherCourses }
