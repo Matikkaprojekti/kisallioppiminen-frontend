@@ -15,8 +15,8 @@ export const TOGGLE_ERROR: Action = 'TOGGLE_ERROR'
 
 export const changePage = (page: string) => ({ type: CHANGE_PAGE, data: page })
 
-export const fetchUser = (): ThunkAction<Promise<User>, {}, {}, AnyAction>  => {
-  return async (dispatch) =>
+export const fetchUser = (): ThunkAction<Promise<User>, {}, {}, AnyAction> => {
+  return async dispatch =>
     userService.login().then(user => {
       dispatch(setUser(user))
       return user
@@ -25,13 +25,13 @@ export const fetchUser = (): ThunkAction<Promise<User>, {}, {}, AnyAction>  => {
 
 export const toggleError = (message: string, visible: boolean) => ({
   type: TOGGLE_ERROR,
-  data: {message, visible}
+  data: { message, visible }
 })
 
 export const setErrorMessage = (message: string): ThunkAction<Promise<void>, {}, {}, AnyAction> => {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(toggleError(message, true))
-    setTimeout(() => dispatch(toggleError('', false)), 3000)
+    setTimeout(() => dispatch(toggleError('', false)), 5000)
   }
 }
 
