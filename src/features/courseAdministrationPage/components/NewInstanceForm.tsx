@@ -6,7 +6,7 @@ import { TeachingInstance } from '../../../types/jsontypes'
 import { createTeacherCourse as createTecherCourseAction } from '../../../reducers/actions/adminPageActions'
 
 export default function NewInstanceForm() {
-  const form = ({ pageState, createTeacherCourse }: { pageState: InitialState, createTeacherCourse: (teachingInstance: TeachingInstance) => Promise<void>}) => {
+  const form = ({ pageState, createTeacherCourse }: { pageState: InitialState; createTeacherCourse: (teachingInstance: TeachingInstance) => Promise<void> }) => {
     const [selectedCourse, setSelectedCourse] = useState(pageState.courses[0])
     const [selectedVersion, setSelectedVersion] = useState(pageState.courses[0].courseContent[0].version)
     const [instanceName, setInstanceName] = useState('')
@@ -36,9 +36,9 @@ export default function NewInstanceForm() {
         version: selectedVersion
       }
 
-      console.log('lähetys:')
-      console.log(instance)
-      console.log('vastaus:')
+      // console.log('lähetys:')
+      // console.log(instance)
+      // console.log('vastaus:')
 
       createTeacherCourse(instance)
 
@@ -125,6 +125,9 @@ export default function NewInstanceForm() {
     }
   })
 
-  const ConnectedNewInstanceForm = connect(mapStateToProps, mapDispatchToProps)(form)
+  const ConnectedNewInstanceForm = connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(form)
   return <ConnectedNewInstanceForm />
 }
