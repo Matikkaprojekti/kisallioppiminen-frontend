@@ -27,6 +27,9 @@ export function courseAdministrationPage() {
     useEffect(() => {
       fetchTeacherCourses()
     }, [])
+
+    console.log(teacherCourses)
+
     const betterCourses = teacherCourses.map(c => {
       const courseId = allCourses.filter(c2 => c.coursematerial_name === c2.courseName)[0].id
       if (exercises !== null && exercises.courseExercises !== null && exercises.idToNumber !== null) {
@@ -43,6 +46,8 @@ export function courseAdministrationPage() {
       }
       return { ...c, exerciseNumbers: [] }
     })
+
+    console.log(betterCourses)
 
     const displayForm = () => setOpen(!open)
 
@@ -66,7 +71,7 @@ export function courseAdministrationPage() {
 
   const addCourses = (betterCourses: UserCourse[]) =>
     betterCourses.map((course: UserCourse) => (
-      <AdminPageChapter key={`${course.id} ${course.version}`} header={course.name} coursekey={course.coursekey}>
+      <AdminPageChapter key={course.coursekey} header={course.name} coursekey={course.coursekey}>
         <Scoreboard course={course} />
       </AdminPageChapter>
     ))
@@ -78,7 +83,7 @@ export function courseAdministrationPage() {
   }: {
     exercises: ExercisesState
     pageState: InitialState
-    allCourses: Course[],
+    allCourses: Course[]
     adminPageState: AdminPageState
   }) => {
     return { exercises, allCourses: pageState.courses, teacherCourses: adminPageState.teacherCourses }
