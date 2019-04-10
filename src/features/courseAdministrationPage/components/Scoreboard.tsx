@@ -62,7 +62,8 @@ const Scoreboard = ({ course }: { course: { version: string; students: Student[]
   }
   // A better unique key for the tr-elements is probably needed!
   const createTableRows = () => {
-    if (students) { // students is undefined when joining teachinginstance!
+    if (students) {
+      // students is undefined when joining teachinginstance!
       return students.map((student: Student) => (
         <tr key={`${student.firstname} ${Math.random() * 10000}`}>
           <td>{`${student.firstname} ${student.lastname} `}</td>

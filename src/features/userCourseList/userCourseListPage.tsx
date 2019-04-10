@@ -35,14 +35,13 @@ export function userCourseListPage() {
       joinTeachingInstance(event.target.courseKey.value)
     }
     function leaveInstance(coursekey: string) {
-      console.log('kurssiavain = ', coursekey)
       leaveTeachingInstance(coursekey)
     }
     const addCourses = (courses: UserCourse[]) =>
       courses.map(course => (
         <CourseWrapper
           leaveInstance={leaveInstance}
-          key={course.owner_id}
+          key={course.coursekey}
           header={course.name}
           coursekey={course.coursekey}
           startdate={course.startdate}
@@ -52,7 +51,6 @@ export function userCourseListPage() {
         </CourseWrapper>
       ))
 
-    console.log(ownCourses)
     const betterCourses = ownCourses.map(c => {
       const courseId = props.allCourses.filter(c2 => c.coursematerial_name === c2.courseName)
       if (
