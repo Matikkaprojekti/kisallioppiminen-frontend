@@ -10,7 +10,7 @@ import {
   fetchOwnCourses as fetchOwnCoursesAction,
   joinTeachingInstance as joinTeachingInstanceAction,
   leaveTeachingInstance as leaveTeachingInstanceAction
-} from '../../reducers/actions/courseActions'
+} from '../../reducers/actions/adminPageActions'
 
 interface Props {
   user: User

@@ -9,6 +9,7 @@ export const SET_TEACHER_COURSES = 'SET_TEACHER_COURSES'
 export const FETCH_OWN_COURSES = 'FETCH_OWN_COURSES'
 export const SET_OWN_COURSES = 'SET_OWN_COURSES'
 export const JOIN_TEACHING_INSTANCE = 'JOIN_TEACHING_INSTANCE'
+export const REMOVE_STUDENTS_COURSE = 'REMOVE_STUDENTS_COURSE'
 export const ADD_OWN_COURSE = 'ADD_OWN_COURSE'
 export const ADD_TECHER_COURSE = 'ADD_TEACHER_COURSE'
 
@@ -39,12 +40,24 @@ export const addTeacherCourse = (teacherCourse: UserCourse) => ({
   type: ADD_TECHER_COURSE,
   data: teacherCourse
 })
+export const removeUsersInstance = (coursekey: string) => ({
+  type: REMOVE_STUDENTS_COURSE,
+  data: coursekey
+})
 
 export const joinTeachingInstance = (coursekey: string): ThunkAction<Promise<any[]>, {}, {}, AnyAction> => {
   return async dispatch =>
     courseService.joinTeachingInstanceService(coursekey).then((teachingInstance: any) => {
       dispatch(addOwnCourse(teachingInstance))
       return teachingInstance
+    })
+}
+export const leaveTeachingInstance = (coursekey: string): any => {
+  console.log('menee leaveTeachingInstance')
+  return async (dispatch: any) =>
+    courseService.leaveTeachingInstanceService(coursekey).then(() => {
+      dispatch(removeUsersInstance(coursekey))
+      return null
     })
 }
 
@@ -58,9 +71,11 @@ export const fetchOwnCourses = (): ThunkAction<Promise<any[]>, {}, {}, AnyAction
 
 export const createTeacherCourse = (teachingInstance: TeachingInstance): ThunkAction<Promise<any[]>, {}, {}, AnyAction> => {
   return async dispatch =>
-    courseService.createTeachingInstance(teachingInstance)
+    courseService
+      .createTeachingInstance(teachingInstance)
       .then(createdInstance => {
         dispatch(addTeacherCourse(createdInstance))
         return createdInstance
-      }).catch(e => dispatch(setErrorMessage(e.message)))
+      })
+      .catch(e => dispatch(setErrorMessage(e.message)))
 }
