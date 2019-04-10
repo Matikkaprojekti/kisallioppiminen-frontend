@@ -4,7 +4,7 @@ import CourseWrapper from './components/CourseWrapper'
 import Scoreboard from '../courseAdministrationPage/components/Scoreboard'
 import { UserCourse } from '../../types/jsontypes'
 import JoinTeachingInstance from './components/JoinTeachingInstance'
-import { InitialState, CoursePageState, ExercisesState, Course, User, AdminPageState } from '../../types/InitialState'
+import { InitialState, CoursePageState, ExercisesState, Course, User, AdminPageState, ContentConfig } from '../../types/InitialState'
 import { ThunkDispatch } from 'redux-thunk'
 import {
   fetchOwnCourses as fetchOwnCoursesAction,
@@ -42,6 +42,7 @@ export function userCourseListPage() {
         <CourseWrapper
           header={course.name}
           material={course.coursematerial_name}
+          material_url={`/courses/${course.id}/version/${course.version}/tab/0`}
           key={course.coursekey}
           coursekey={course.coursekey}
           startdate={course.startdate}
@@ -67,6 +68,7 @@ export function userCourseListPage() {
 
         return {
           ...c,
+          id: courseId[0].id,
           exerciseNumbers,
           students
         }

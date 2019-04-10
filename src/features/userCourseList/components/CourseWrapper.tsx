@@ -6,7 +6,7 @@ import Link from '../../baseComponents/Link'
 interface Props {
   header: string
   material: string
-  // material_url: string
+  material_url: string
   children: any
   startdate: string
   enddate: string
@@ -22,12 +22,13 @@ const CourseWrapper = (props: Props) => {
     setOpen(!open)
   }
 
-  // <Link href={props.material_url}>{props.material}</Link>
   return (
     <div>
       <div className="chapter" onClick={toggleVisibility}>
         <label className="userCourseListPage-text">{props.header}</label>
-        <label className="userCourseListPage-text" />
+        <label className="userCourseListPage-text">
+          <Link href={props.material_url}>{props.material}</Link>
+        </label>
         <label className="userCourseListPage-date">
           {format(props.startdate, 'DD-MM-YYYY')} - {format(props.enddate, 'DD-MM-YYYY')}
         </label>

@@ -1,12 +1,5 @@
 import fs from 'fs'
-import { InitialState, Course, CoursePageState, ExercisesState, AdminPageState } from '../types/InitialState'
-
-interface ContentConfig {
-  id: string
-  courseName: string
-  quickLinks: string[]
-  contentFiles: Array<{ version: string; path: string }>
-}
+import { InitialState, ContentConfig, Course, CoursePageState, ExercisesState, AdminPageState } from '../types/InitialState'
 
 const contentConfig: ContentConfig[] = JSON.parse(fs.readFileSync('./content/content_config.json', 'utf8'))
 // const idyllConfig: ContentConfig = JSON.parse(fs.readFileSync('./content/index.idl', 'utf-8'))
