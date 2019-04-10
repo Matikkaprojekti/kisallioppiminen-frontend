@@ -25,8 +25,6 @@ export const adminPageReducer = (state: AdminPageState | null = null, action: { 
       }
       break
     case 'REMOVE_STUDENTS_COURSE':
-      console.log('menee remove students cours')
-      console.log('data = ', data)
       if (state) {
         return R.merge(state, { ownCourses: R.reject(({ coursekey }) => coursekey === data, state.ownCourses) })
       }
