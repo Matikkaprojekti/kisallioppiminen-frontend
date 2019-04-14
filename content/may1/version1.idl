@@ -107,90 +107,41 @@ Materiaaliin saa myös kuvia
 [Picture imagesrc:'/img/maa3/suoraK04.png' /]
 [/Chapter]
 
+
 [/CourseSection]
 
 [CourseSection header:'Luvut ja laskutoimitukset']
 [Chapter header:'Rationaaliluvut'] 
 // Olen kommentti
-olen 1. luvun chapter teksti
-
-[Theorem header:'Teoreema 1']
-syvällistä
-[/Theorem]
-
-[Proof]
-iha hyvä perustelu
-[/Proof]
-
-lisää tekstiä
+Materiaali kesken.
 [/Chapter]
 [/CourseSection]
 
 [CourseSection header:'Potenssi ja logaritmi']
 [Chapter header:'2. Luku']
 // Olen kommentti
-olen 2. luvun chapter teksti
-
-[Theorem header:'Teoreema 1']
-syvällistä
-[/Theorem]
-
-[Proof]
-iha hyvä perustelu
-[/Proof]
-
-lisää tekstiä
+Materiaali kesken.
 [/Chapter]
 [/CourseSection]
 
 [CourseSection header:'Lukujonot ja summat']
 [Chapter header:'3. Luku']
 // Olen kommentti
-olen chapter teksti kolmannelle luvulle 
-
-[Theorem header:'Teoreema 1']
-syvällistä
-[/Theorem]
-
-[Proof]
-iha hyvä perustelu
-[/Proof]
-
-lisää tekstiä
+Materiaali kesken.
 [/Chapter]
 [/CourseSection]
 
 [CourseSection header:'Funktio']
 [Chapter header:'4. Luku']
 // Olen kommentti
-olen chapter teksti neljännelle luvulle 
-
-[Theorem header:'Teoreema 1']
-syvällistä
-[/Theorem]
-
-[Proof]
-iha hyvä perustelu
-[/Proof]
-
-lisää tekstiä
+Materiaali kesken.
 [/Chapter]
 [/CourseSection]
 
 [CourseSection header:'Prosenttilaskenta']
 [Chapter header:'5. Luku']
 // Olen kommentti
-olen 5. luvun chapter teksti
-
-[Theorem header:'Teoreema 1']
-syvällistä
-[/Theorem]
-
-[Proof]
-iha hyvä perustelu
-[/Proof]
-
-lisää tekstiä
+Materiaali kesken.
 [/Chapter]
 [/CourseSection]
 [/CourseNumberer]

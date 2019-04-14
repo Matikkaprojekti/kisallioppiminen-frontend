@@ -1,10 +1,7 @@
 [CourseNumberer]
 [CourseSection header:'MAA4']
 [Chapter header:'Luvun tavoitteet']
-[Math] 
-1 \ \% = 
-\frac {1}{100} = 0{,}01.
-[/Math]
+[Equation]1 \% = \frac {1}{100} = 0{,}01.[/Equation]
 [/Chapter]
 [/CourseSection]
 

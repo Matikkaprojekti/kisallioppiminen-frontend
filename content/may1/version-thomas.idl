@@ -97,68 +97,28 @@ d) [Equation]16:50[/Equation]
 [CourseSection header:'Luvut ja laskutoimitukset']
 [Chapter header:'Rationaaliluvut'] 
 // Olen kommentti
-olen 1. luvun chapter teksti
-
-[Theorem header:'Teoreema 1']
-syvällistä
-[/Theorem]
-
-[Proof]
-iha hyvä perustelu
-[/Proof]
-
-lisää tekstiä
+Materiaali kesken.
 [/Chapter]
 [/CourseSection]
 
 [CourseSection header:'Potenssi ja logaritmi']
 [Chapter header:'2. Luku']
 // Olen kommentti
-olen 2. luvun chapter teksti
-
-[Theorem header:'Teoreema 1']
-syvällistä
-[/Theorem]
-
-[Proof]
-iha hyvä perustelu
-[/Proof]
-
-lisää tekstiä
+Materiaali kesken.
 [/Chapter]
 [/CourseSection]
 
 [CourseSection header:'Lukujonot ja summat']
 [Chapter header:'3. Luku']
 // Olen kommentti
-olen chapter teksti kolmannelle luvulle 
-
-[Theorem header:'Teoreema 1']
-syvällistä
-[/Theorem]
-
-[Proof]
-iha hyvä perustelu
-[/Proof]
-
-lisää tekstiä
+Materiaali kesken.
 [/Chapter]
 [/CourseSection]
 
 [CourseSection header:'Funktio']
 [Chapter header:'4. Luku']
 // Olen kommentti
-olen chapter teksti neljännelle luvulle 
-
-[Theorem header:'Teoreema 1']
-syvällistä
-[/Theorem]
-
-[Proof]
-iha hyvä perustelu
-[/Proof]
-
-lisää tekstiä
+Materiaali kesken.
 [/Chapter]
 [/CourseSection]
 
