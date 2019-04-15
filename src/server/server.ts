@@ -16,7 +16,8 @@ server.use(express.static('dist'))
 
 server.get('*', (req, res) => {
   const path = req.path
-  const initialState = resolveInitialState(path)
+  const url = req.query.url
+  const initialState = url ? resolveInitialState(url) : resolveInitialState(path)
   const body = ReactServer.renderToString(createApp(initialState))
   const template = createTemplate({
     title: 'Kisällioppiminen.fi',
