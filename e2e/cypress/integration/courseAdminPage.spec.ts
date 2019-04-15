@@ -5,10 +5,12 @@ beforeEach(() => {
 
 describe('Course admin page tests', () => {
   it('Shows all courses', () => {
+    cy.wait(5000) // wait for backend to serve courses
     cy.get('.chapter').should('have.length', 3)
   })
 
   it('Expands course data on header click', () => {
+    cy.wait(5000) // wait for backend to serve courses
     cy.get('.chapter').first().click()
     cy.get('.chapter-content').first().should('be.visible')
   })
