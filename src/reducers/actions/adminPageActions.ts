@@ -12,6 +12,7 @@ export const JOIN_TEACHING_INSTANCE = 'JOIN_TEACHING_INSTANCE'
 export const REMOVE_STUDENTS_COURSE = 'REMOVE_STUDENTS_COURSE'
 export const ADD_OWN_COURSE = 'ADD_OWN_COURSE'
 export const ADD_TECHER_COURSE = 'ADD_TEACHER_COURSE'
+export const SET_NEW_INSTANCE_FORM_VALUE = 'SET_NEW_INSTANCE_FORM_VALUE'
 
 export const setTeacherCourses = (courses: any[]) => ({
   type: SET_TEACHER_COURSES,
@@ -44,6 +45,14 @@ export const removeUsersInstance = (coursekey: string) => ({
   type: REMOVE_STUDENTS_COURSE,
   data: coursekey
 })
+
+export const setNewInstanceFormValue = (value: {[key: string]: any}) => {
+  console.log('fjk')
+  return {
+    type: SET_NEW_INSTANCE_FORM_VALUE,
+    data: value
+  }
+}
 
 export const joinTeachingInstance = (coursekey: string): ThunkAction<Promise<any[]>, {}, {}, AnyAction> => {
   return async dispatch => {
