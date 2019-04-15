@@ -11,7 +11,6 @@ const setCredentials = (credentials: any) => {
 
 const login = async (): Promise<User> => {
   const response = await HTTP.get(resolveUri() + '/users/me', getRequestConfig())
-  console.log(response)
   return response.data
 }
 
