@@ -4,7 +4,6 @@ import courseService from '../../../services/courseService'
 
 export default function Trafficlights({ updateColor, coursekey, UUID }: { updateColor: any; coursekey: string; UUID: string }) {
   const handleClick = async (status: string) => {
-    console.log('painettu', status)
     const result = await courseService.trafficlight(coursekey, UUID, status)
 
     if (result.message === 'Update finished.') {
