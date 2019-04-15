@@ -21,6 +21,8 @@ ul {
   text-decoration: none;
   text-shadow: 1px 1px 2px black;
   text-transform: uppercase; }
+  .white-link:hover {
+    color: lightblue; }
 
 .app {
   background-color: white;
@@ -140,6 +142,9 @@ ul {
   text-shadow: 1px 1px 2px black;
   font-size: 15px; }
 
+.userCourseListPage-button:hover {
+  background-color: lightblue; }
+
 .userCourseListPage-date {
   padding-right: 2%;
   color: gray;
@@ -170,9 +175,6 @@ ul {
   color: gray;
   font-size: 15px;
   width: 30%; }
-
-.userCourseListPage:hover {
-  background-color: ghostwhite; }
 
 .hero {
   margin-bottom: 50px; }
@@ -425,7 +427,7 @@ ul {
   margin: 1% 1%; }
 
 .chapter {
-  overflow: inherit;
+  overflow: auto;
   border: 1px;
   border-style: ridge;
   border-color: #dddddd;
@@ -481,6 +483,7 @@ ul {
   height: 30px;
   margin-bottom: 10px;
   margin-right: 10px;
+  margin-left: 5px;
   background-color: #4fab53; }
 
 .trafficlight-container {
