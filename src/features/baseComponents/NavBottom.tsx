@@ -43,20 +43,20 @@ export function NavBottom() {
 
   return (
     <div className="navigatorBottom">
-      <label htmlFor="tehtavat" className="navigatorBottom-item">
+      <span className="navigatorBottom-item">
         Tehtävät
-      </label>
-      <input type="checkbox" id="tehtavat" onClick={changeExerciseVisibility} />
-      {/*
-      <label htmlFor="teoria" className="navigatorBottom-item">
-        Teoria
-      </label>
-      <input type="checkbox" id="teoria" />
-      */}
-      <label htmlFor="avaakaikki" className="navigatorBottom-item">
+        <label className="switch">
+          <input type="checkbox" onClick={changeExerciseVisibility} />
+          <span className="toggle" />
+        </label>
+      </span>
+      <span className="navigatorBottom-item">
         Avaa kaikki
-      </label>
-      <input type="checkbox" id="avaakaikki" onClick={changeAllVisibility} />
+        <label className="switch">
+          <input type="checkbox" onClick={changeAllVisibility} />
+          <span className="toggle" />
+        </label>
+      </span>
       <a className="navigatorBottom-scroll-up" href="#">
         ⬆
       </a>
