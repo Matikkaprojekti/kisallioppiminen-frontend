@@ -35,6 +35,11 @@ export function courseAdministrationPage() {
       if (exercises !== null && exercises.courseExercises !== null && exercises.idToNumber !== null) {
         const exerciseNumbers = exercises.courseExercises[`${courseId} ${c.version}`].map(e => exercises.idToNumber[e])
 
+        // Jos kurssilla ei ole opiskelijoita, niin opiskelijalista on syytä asettaa tyhjäksi.
+        if (c.students === undefined) {
+          c.students = []
+        }
+
         const students = c.students.map(s => ({ ...s, exercises: s.exercises.map(ex => ({ ...ex, uuid: exercises.idToNumber[ex.uuid] })) }))
 
         return {
