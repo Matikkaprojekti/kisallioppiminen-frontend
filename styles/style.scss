@@ -29,6 +29,10 @@ ul {
   text-decoration: none;
   text-shadow: 1px 1px 2px black;
   text-transform: uppercase;
+
+  &:hover {
+    color: lightblue;
+  }
 }
 
 .app {
@@ -181,12 +185,17 @@ ul {
     text-shadow: 1px 1px 2px black;
     font-size: 15px;
   }
+  &-button:hover {
+    background-color: lightblue;
+  }
+
   &-date {
     padding-right: 2%;
     color: gray;
     float: left;
     width: 20%;
   }
+
   &-key {
     padding-left: 2%;
     padding-right: 2%;
@@ -212,10 +221,6 @@ ul {
     color: gray;
     font-size: 15px;
     width: 30%;
-  }
-
-  &:hover {
-    background-color: ghostwhite;
   }
 }
 
@@ -524,7 +529,7 @@ ul {
 }
 
 .chapter {
-  overflow: inherit;
+  overflow: auto;
   border: 1px;
   border-style: ridge;
   border-color: #dddddd;
@@ -588,6 +593,7 @@ ul {
   height: 30px;
   margin-bottom: 10px;
   margin-right: 10px;
+  margin-left: 5px;
   background-color: $greenColor;
 }
 
