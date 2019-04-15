@@ -26,6 +26,12 @@ describe('Page navigation tests', () => {
     cy.get('.navigator-item').first().click()
     cy.url().should('be', '/')
   })
+
+  it('Goes to course admin page when navigation link is pressed', () => {
+    cy.get('.dropdown-content-link').first().click({force: true})
+    cy.wait(500)
+    cy.url().should('be', '/courseAdmin')
+  })
 })
 
 describe('Consecutive navigation tests', () => {
