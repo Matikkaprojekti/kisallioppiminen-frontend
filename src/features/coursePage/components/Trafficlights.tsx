@@ -2,10 +2,14 @@ import React, { Fragment } from 'react'
 import Emoji from 'react-emoji-render'
 import courseService from '../../../services/courseService'
 
-export default function Trafficlights({ coursekey, UUID }: { coursekey: string; UUID: string }) {
-  const handleClick = (status: string) => {
-    // console.log('painettu', status)
-    courseService.trafficlight(coursekey, UUID, status)
+export default function Trafficlights({ updateColor, coursekey, UUID }: { updateColor: any; coursekey: string; UUID: string }) {
+  const handleClick = async (status: string) => {
+    console.log('painettu', status)
+    const result = await courseService.trafficlight(coursekey, UUID, status)
+
+    if (result.message === 'Update finished.') {
+      updateColor(status)
+    }
   }
   return (
     <Fragment>
