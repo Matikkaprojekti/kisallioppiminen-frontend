@@ -4,9 +4,18 @@ import { InitialState, Course } from '../../../types/InitialState'
 import { ThunkDispatch } from 'redux-thunk'
 import { TeachingInstance } from '../../../types/jsontypes'
 import { createTeacherCourse as createTecherCourseAction } from '../../../reducers/actions/adminPageActions'
+import { setErrorMessage as setErrorMessageAction } from '../../../reducers/actions/pageStateActions'
 
 export default function NewInstanceForm() {
-  const form = ({ pageState, createTeacherCourse }: { pageState: InitialState; createTeacherCourse: (teachingInstance: TeachingInstance) => Promise<void> }) => {
+  const form = ({
+    pageState,
+    createTeacherCourse,
+    setErrorMessage
+  }: {
+    pageState: InitialState
+    createTeacherCourse: (teachingInstance: TeachingInstance) => Promise<void>
+    setErrorMessage: (message: string) => Promise<void>
+  }) => {
     const [selectedCourse, setSelectedCourse] = useState(pageState.courses[0])
     const [selectedVersion, setSelectedVersion] = useState(pageState.courses[0].courseContent[0].version)
     const [instanceName, setInstanceName] = useState('')
@@ -27,22 +36,34 @@ export default function NewInstanceForm() {
     const submitForm = (event: FormEvent) => {
       event.preventDefault()
 
+      if (!courseKey.trim()) {
+        return setErrorMessage('Kurssiavain ei saa olla tyhjä')
+      }
+
+      if (!instanceName.trim()) {
+        return setErrorMessage('Kurssi nimi ei saa olla tyhjä')
+      }
+
+      if (!endDate || !startDate) {
+        return setErrorMessage('Alku- ja loppupäivämäärät pitää olla määritelty')
+      }
+
+      if (endDate < startDate) {
+        return setErrorMessage('Loppupäivämäärän pitää olla alkupäivämäärän jälkeen')
+      }
+
       const instance = {
-        coursekey: courseKey,
-        name: instanceName,
+        coursekey: courseKey.trim(),
+        name: instanceName.trim(),
         startdate: startDate,
         enddate: endDate,
         coursematerial_name: selectedCourse.courseName,
         version: selectedVersion
       }
 
-      // console.log('lähetys:')
-      // console.log(instance)
-      // console.log('vastaus:')
-
       createTeacherCourse(instance)
 
-      clearForm()
+      return clearForm()
     }
 
     const clearForm = () => {
@@ -122,6 +143,9 @@ export default function NewInstanceForm() {
   const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
     createTeacherCourse: async (teachingInstance: TeachingInstance) => {
       await dispatch(createTecherCourseAction(teachingInstance))
+    },
+    setErrorMessage: async (message: string) => {
+      await dispatch(setErrorMessageAction(message))
     }
   })
 
