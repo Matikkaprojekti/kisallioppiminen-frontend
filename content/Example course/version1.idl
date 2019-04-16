@@ -76,7 +76,7 @@ Asetetaan seuraava määritelmä:
 
 Suorakulmion *pinta-ala* on samasta kärjestä alkavien sivujen pituuksien tulo eli alla olevan kuvion merkinnöillä ab. 
 
-// Komponentilla luodaa kuva. imagesrc-muuttuja määrittelee kuvan polun. 
+// Komponentilla luodaa kuva. imagesrc-muuttuja määrittelee kuvan polun. Tyylit voi lisätä ilman välejä ja lainausmerkkejä 'styles:' jälkeen
 [Picture imagesrc:'/img/maa3/suoraK04.png' /]
 
 [/Definition]
