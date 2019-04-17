@@ -22,6 +22,7 @@ const CourseSection = (props: {
   const { ownCourses, user, courseId, courseVersion, allCourses, exercises } = props
   const courseName = allCourses.filter(c => c.id === courseId)[0].courseName
   const course = ownCourses.filter(c => c.coursematerial_name === courseName && c.version === courseVersion)
+
   const showTrafficLight = () => {
     if (course.length === 0 || !user) {
       return null

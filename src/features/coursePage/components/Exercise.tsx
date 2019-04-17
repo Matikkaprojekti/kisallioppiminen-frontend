@@ -7,6 +7,10 @@ const Exercise = (props: any) => {
   const [color, setColor] = useState(props.color || 'whitesmoke')
   const contentClassname = classnames('exercise-content', { 'exercise-content-hidden': open !== true })
 
+  if (color === 'whitesmoke' && props.color) {
+    setColor(props.color)
+  }
+
   const updateColor = (newColor: string) => {
     if (newColor === 'red' || newColor === 'yellow' || newColor === 'green') {
       setColor(newColor)
