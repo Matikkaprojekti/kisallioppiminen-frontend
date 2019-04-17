@@ -4,6 +4,7 @@ import { InitialState, CoursePageState, ExercisesState, AdminPageState } from '.
 import { coursePageReducer, exerciseReducer } from './courseReducer'
 import thunk from 'redux-thunk'
 import { adminPageReducer } from './adminPageReducer'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 const reducer = combineReducers({
   pageState: pageStateReducer,
@@ -22,5 +23,5 @@ export const initStore = ({
   coursePageState: CoursePageState
   exercises: ExercisesState
   adminPageState: AdminPageState
-}) => createStore(reducer, { pageState, coursePageState, exercises, adminPageState }, applyMiddleware(thunk))
-// (typeof window !== 'undefined' && (window as any).__REDUX_DEVTOOLS_EXTENSION__) && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+}) => createStore(reducer, { pageState, coursePageState, exercises, adminPageState }, composeWithDevTools(applyMiddleware(thunk))
+)

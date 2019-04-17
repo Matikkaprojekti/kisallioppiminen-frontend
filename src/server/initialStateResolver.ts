@@ -99,7 +99,15 @@ export function resolveInitialState(
     },
     adminPageState: {
       ownCourses: [],
-      teacherCourses: []
+      teacherCourses: [],
+      newInstanceForm: {
+        name: '',
+        coursematerial_name: courses[0].courseName,
+        version: '1',
+        coursekey: '',
+        startdate: new Date().toISOString().split('T')[0],
+        enddate: new Date().toISOString().split('T')[0]
+      }
     }
   }
 }

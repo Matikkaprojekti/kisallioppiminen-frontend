@@ -1,12 +1,10 @@
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
 import { resolveUri } from '../utils/resolveUri'
 import { TeachingInstance } from '../types/jsontypes'
 
 const baseUrl = resolveUri()
 
-const HTTP = axios.create({
-  withCredentials: true
-})
+const HTTP = axios.create()
 
 const joinTeachingInstanceService = async (coursekey: string): Promise<any> => {
   try {

@@ -39,4 +39,12 @@ export interface ExercisesState {
 export interface AdminPageState {
   ownCourses: UserCourse[]
   teacherCourses: UserCourse[]
+  newInstanceForm: {
+    name: string
+    coursematerial_name: string
+    version: string
+    coursekey: string
+    startdate: string
+    enddate: string
+  }
 }
