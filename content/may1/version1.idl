@@ -102,9 +102,9 @@ d) [Equation]16:50[/Equation]
 
 [Chapter header:'Kuvatesti']
 
-Materiaaliin saa myös kuvia
+Materiaaliin saa myös kuvia. Seuraavaan kuvaan on lisätty erikseen tyylityksenä reunat.
 
-[Picture imagesrc:'/img/maa3/suoraK04.png' /]
+[Picture imagesrc:'/img/maa3/suoraK04.png' imagestyle:'borderStyle: dotted;width:300px'/]
 [/Chapter]
 
 
