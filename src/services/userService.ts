@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios'
+import axios from 'axios'
 import { User } from '../types/InitialState'
 import { resolveUri } from '../utils/resolveUri'
 import { getRequestConfig } from '../utils/requestUtils'
