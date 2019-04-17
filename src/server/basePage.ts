@@ -30,7 +30,7 @@ export const createTemplate = ({
     <body style="margin:0">
       <div id="app">${body}</div>
     </body>
-    <script src="${!isStatic ? '/js/client.js' : 'client.js'}" defer></script>
+    <script src="${!isStatic ? '/js/client.js' : '/client.js'}" defer></script>
   </html>
   `
 }
