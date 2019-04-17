@@ -16,7 +16,7 @@ server.use(express.static('dist'))
 
 server.get('*', (req, res) => {
   const path = req.path
-  const url = req.query.url
+  const url = req.query.p
   const initialState = url ? resolveInitialState(url) : resolveInitialState(path)
   const body = ReactServer.renderToString(createApp(initialState))
   const template = createTemplate({
