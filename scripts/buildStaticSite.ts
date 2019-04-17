@@ -10,7 +10,7 @@ if (process.env.IS_BUILD === 'true') {
   process.env.KO_ENV = 'production'
 }
 
-const initialState = resolveInitialState('/')
+const initialState = resolveInitialState(null)
 const app = createApp(initialState)
 const staticHtml = ReactServer.renderToString(app)
 const wrappedHtml = createTemplate({
