@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { User } from '../types/InitialState'
-import { resolveUri } from '../utils/resolveUri'
+import { resolveUri } from '../utils/environmentResolvers'
 import { getRequestConfig } from '../utils/requestUtils'
 
 const HTTP = axios.create()

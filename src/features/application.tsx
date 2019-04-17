@@ -9,6 +9,7 @@ import { initStore } from '../reducers/store'
 import { Store } from 'redux'
 import { fetchUser } from '../reducers/actions/pageStateActions'
 import Error from './baseComponents/Error'
+import { resolveInitialPath } from '../utils/environmentResolvers'
 
 export function createApp(initialState: { pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState, adminPageState: AdminPageState }) {
   const store = initStore(initialState)
@@ -46,7 +47,8 @@ export function createApp(initialState: { pageState: InitialState; coursePageSta
 function resolvePageToRender(initialState: InitialState) {
   const { pageParams } = initialState
   const { path } = pageParams
-  const page = getPage(path)
+  const resolvedPath = resolveInitialPath(path)
+  const page = getPage(resolvedPath)
 
   if (page === undefined) {
     return { component: <h1>404 Not found :(</h1>, pageName: 'Not found' }

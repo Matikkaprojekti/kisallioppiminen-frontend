@@ -5,7 +5,7 @@ import { InitialState, User } from '../../types/InitialState'
 import { fetchUser } from '../../reducers/actions/pageStateActions'
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
-import { resolveUri, resolveAuthUrl } from '../../utils/resolveUri'
+import { resolveUri, resolveAuthUrl } from '../../utils/environmentResolvers'
 
 interface Props {
   user: User | null

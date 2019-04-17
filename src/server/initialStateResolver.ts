@@ -11,7 +11,7 @@ export interface ContentConfig {
 const contentConfig: ContentConfig[] = JSON.parse(fs.readFileSync('./content/content_config.json', 'utf8'))
 
 export function resolveInitialState(
-  path: string
+  path?: string
 ): { pageState: InitialState; coursePageState: CoursePageState; exercises: ExercisesState; adminPageState: AdminPageState } {
   const courses = getCourses()
 

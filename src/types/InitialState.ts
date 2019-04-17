@@ -15,7 +15,7 @@ export interface User {
 }
 
 export interface PageParams {
-  path: string
+  path?: string
   pathParams: any // No smart way of typifying these, so let's just got with any
   user: User | null
 }

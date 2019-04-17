@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { resolveUri } from '../utils/resolveUri'
+import { resolveUri } from '../utils/environmentResolvers'
 import { TeachingInstance } from '../types/jsontypes'
 
 const baseUrl = resolveUri()

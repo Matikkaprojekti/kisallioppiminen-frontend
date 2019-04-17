@@ -28,3 +28,12 @@ export const resolveAuthUrl = () => {
 
   return 'http://localhost:8000/users/auth'
 }
+
+export const resolveInitialPath = (path?: string) => {
+  if (typeof window !== 'undefined') {
+    if (!path) {
+      return window.location.pathname
+    }
+  }
+  return path ? path : '/'
+}
