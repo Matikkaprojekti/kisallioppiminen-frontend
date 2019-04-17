@@ -4,7 +4,7 @@ import Trafficlights from './Trafficlights'
 
 const Exercise = (props: any) => {
   const [open, setOpen] = useState(props.open)
-  const [color, setColor] = useState('whitesmoke')
+  const [color, setColor] = useState(props.color || 'whitesmoke')
   const contentClassname = classnames('exercise-content', { 'exercise-content-hidden': open !== true })
 
   const updateColor = (newColor: string) => {
