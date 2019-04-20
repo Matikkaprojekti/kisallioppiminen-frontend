@@ -25,21 +25,25 @@ const CourseWrapper = (props: Props) => {
   return (
     <div>
       <div className="chapter">
-        <span onClick={toggleVisibility}>
-          <label className="userCourseListPage-text">{props.header}</label>
-          <label className="userCourseListPage-text">
-            <Link href={props.material_url}>{props.material}</Link>
-          </label>
-          <label className="userCourseListPage-date">
-            {format(props.startdate, 'DD-MM-YYYY')} - {format(props.enddate, 'DD-MM-YYYY')}
-          </label>
-        </span>
-        <button className="userCourseListPage-button" onClick={() => props.leaveInstance(props.coursekey)}>
-          Poistu kurssilta
+        <div className="userCourseListPage-container">
+          <span onClick={toggleVisibility}>
+            <label className="userCourseListPage-text">{props.header}</label>
+            <label className="userCourseListPage-text">
+              <Link href={props.material_url}>{props.material}</Link>
+            </label>
+            <label className="userCourseListPage-date">
+              {format(props.startdate, 'DD-MM-YYYY')} - {format(props.enddate, 'DD-MM-YYYY')}
+            </label>
+          </span>
+          <span >
+            <button className="userCourseListPage-button" onClick={() => props.leaveInstance(props.coursekey)}>
+              Poistu kurssilta
         </button>
-        <span onClick={toggleVisibility}>
-          <label className="userCourseListPage-key">{props.coursekey}</label>
-        </span>
+          </span>
+          <span onClick={toggleVisibility}>
+            <label className="userCourseListPage-key">{props.coursekey}</label>
+          </span>
+        </div>
       </div>
       <div className={contentClassname}>{props.children}</div>
     </div>

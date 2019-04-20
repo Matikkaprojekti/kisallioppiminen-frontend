@@ -191,15 +191,11 @@ ul {
   }
 
   &-date {
-    padding-right: 2%;
     color: gray;
-    float: left;
-    width: 20%;
+    padding-right: 6%;
   }
 
   &-key {
-    padding-left: 2%;
-    padding-right: 2%;
     color: black;
     margin: 5px;
     float: right;
@@ -207,9 +203,9 @@ ul {
   }
 
   &-text {
-    padding-right: 2%;
     float: left;
     width: 20%;
+    padding-right: 6%;
   }
   &-enter {
     display: inline-block;
@@ -222,6 +218,9 @@ ul {
     color: gray;
     font-size: 15px;
     width: 30%;
+  }
+  &-container {
+    display: flex;
   }
 }
 

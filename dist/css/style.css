@@ -175,15 +175,11 @@ ul {
 }
 
 .userCourseListPage-date {
-  padding-right: 2%;
   color: gray;
-  float: left;
-  width: 20%;
+  padding-right: 6%;
 }
 
 .userCourseListPage-key {
-  padding-left: 2%;
-  padding-right: 2%;
   color: black;
   margin: 5px;
   float: right;
@@ -191,9 +187,9 @@ ul {
 }
 
 .userCourseListPage-text {
-  padding-right: 2%;
   float: left;
   width: 20%;
+  padding-right: 6%;
 }
 
 .userCourseListPage-enter {
@@ -207,6 +203,10 @@ ul {
   color: gray;
   font-size: 15px;
   width: 30%;
+}
+
+.userCourseListPage-container {
+  display: flex;
 }
 
 .hero {
