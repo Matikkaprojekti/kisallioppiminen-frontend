@@ -115,6 +115,18 @@ ul {
   margin-bottom: 5%;
 }
 
+.course-admin-page-key {
+  color: black;
+  margin: 5px;
+  float: right;
+  text-transform: lowercase;
+  filter: blur(4px);
+}
+
+.course-admin-page :hover {
+  filter: none;
+}
+
 .infoPageContainer {
   min-height: 100vh;
   margin-bottom: 50px;
@@ -680,6 +692,9 @@ ul {
   text-shadow: 1px 1px 2px black;
   font-size: 15px;
   cursor: pointer;
+}
+.newCourseButton:hover {
+  background-color: lightblue;
 }
 
 .dropdown {
