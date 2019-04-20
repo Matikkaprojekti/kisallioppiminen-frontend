@@ -28,10 +28,15 @@ const Chapter = (props: any) => {
     arr = mapChildren(props.children, (c: any) => {
       if (c.type && c.type.name && c.type.name.toLowerCase() === 'exercise') {
         props.count.number++
+        const exercise = props.ownCourse.students[0].exercises.filter(
+          (e: { uuid: string; exerciseNumber: string; status: string }) => e.exerciseNumber === `${props.numeral}.${props.count.number}`
+        )[0]
+
         const clone = React.cloneElement(c, {
           header: `Tehtävä ${props.numeral}.${props.count.number}: ${c.props.header}`,
           user: props.user,
-          coursekey: props.coursekey
+          coursekey: props.coursekey,
+          color: exercise ? exercise.status : null
         })
         return clone
       }

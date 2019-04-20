@@ -4,10 +4,11 @@ import courseService from '../../../services/courseService'
 
 export default function Trafficlights({ updateColor, coursekey, UUID }: { updateColor: any; coursekey: string; UUID: string }) {
   const handleClick = async (status: string) => {
-    const result = await courseService.trafficlight(coursekey, UUID, status)
-
-    if (result.message === 'Update finished.') {
+    try {
+      await courseService.trafficlight(coursekey, UUID, status)
       updateColor(status)
+    } catch (error) {
+      console.log(`error: ${error}`)
     }
   }
   return (
