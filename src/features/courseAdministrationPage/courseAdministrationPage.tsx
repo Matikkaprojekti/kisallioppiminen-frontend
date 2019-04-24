@@ -72,7 +72,13 @@ export function courseAdministrationPage() {
 
   const addCourses = (betterCourses: UserCourse[]) =>
     betterCourses.map((course: UserCourse) => (
-      <AdminPageChapter key={course.coursekey} header={course.name} coursekey={course.coursekey}>
+      <AdminPageChapter
+        key={course.coursekey}
+        header={course.name}
+        coursekey={course.coursekey}
+        startdate={course.startdate}
+        enddate={course.enddate} material={course.coursematerial_name}
+        material_url={`/courses/${course.id}/version/${course.version}/tab/0`}>
         <Scoreboard course={course} />
       </AdminPageChapter>
     ))

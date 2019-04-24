@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import classnames from 'classnames'
 import { mapChildren } from 'idyll-component-children'
 import { User } from '../../../types/InitialState'
+import format from 'date-fns/format'
+import Link from '../../baseComponents/Link'
 
 interface Props {
   header: string
@@ -38,18 +40,22 @@ const AdminPageChapter = (props: any) => {
       return c
     })
   }
-
   return (
     <div>
       <div className="chapter" onClick={toggleVisibility}>
-        {props.header}
-        <label className="userCourseListPage-key">{props.coursekey}</label>
+        <div className="course-admin-page">
+          <label className="userCourseListPage-text">{props.header}</label>
+          <label className="course-admin-page-key">{props.coursekey}</label>
+          <label className="userCourseListPage-text">
+            <Link href={props.material_url}>{props.material}</Link>
+          </label>
+          <label className="userCourseListPage-date">
+            {format(props.startdate, 'DD-MM-YYYY')} - {format(props.enddate, 'DD-MM-YYYY')}
+          </label>
+        </div>
       </div>
       <div className={contentClassname}>
         {arr}
-        <div className="close-chapter" onClick={toggleVisibility}>
-          Sulje kappale
-        </div>
       </div>
     </div>
   )
