@@ -48,13 +48,7 @@ export function coursePage() {
   const coursePageApp = (props: { pageState: InitialState; coursePageState: CoursePageState; fetchOwnCourses: () => Promise<void>; user: User | null }) => {
     const { pageState, coursePageState, fetchOwnCourses, user } = props
     const courseToRender = resolveCourse(pageState)
-    const courseId: string = pageState.pageParams.pathParams ? pageState.pageParams.pathParams.id : ''
-    let version: any = coursePageState ? coursePageState.selectedCourseVersion : ''
-    if (version === null) {
-      version = pageState.pageParams.pathParams.version
-    }
-    const courseMaterialVersion: any = resolveCourseVersion(pageState, courseToRender, version)
-    window.history.pushState({}, 'Kisällioppiminen', `/courses/${courseId}/version/${version}/tab/0`)
+    const courseMaterialVersion: any = resolveCourseVersion(pageState, courseToRender)
     useEffect(() => {
       if (user) {
         fetchOwnCourses()
@@ -68,8 +62,8 @@ export function coursePage() {
         {typeof window !== 'undefined' ? (
           <IdyllDocument markup={courseMaterialVersion ? courseMaterialVersion.content : ''} components={availableComponents} />
         ) : (
-            <IdyllDocument ast={compiler(courseMaterialVersion ? courseMaterialVersion.content : '', { async: false }) as Node[]} components={availableComponents} />
-          )}
+          <IdyllDocument ast={compiler(courseMaterialVersion ? courseMaterialVersion.content : '', { async: false }) as Node[]} components={availableComponents} />
+        )}
         <NavBottom />
       </div>
     )
@@ -94,8 +88,8 @@ function resolveCourseVersion({ pageParams }: InitialState, course?: Course, ver
   const { pathParams } = pageParams
   return course
     ? course.courseContent.find(content => {
-      return String(content.version) === version
-    }) || course.courseContent[0]
+        return String(content.version) === pathParams.version
+      }) || course.courseContent[0]
     : undefined
 }
 
