@@ -129,6 +129,21 @@ ul {
   }
 }
 
+.course-admin-page {
+  &-key {
+    color: black;
+    flex: 1;
+    margin: 5px;
+    float: right;
+    text-transform: lowercase;
+    text-align: right;
+    filter: blur(4px);
+  }
+  &-key:hover {
+    filter: none;
+  }
+}
+
 .infoPageContainer {
   min-height: 100vh;
   margin-bottom: 50px;
@@ -174,11 +189,9 @@ ul {
     text-transform: uppercase;
   }
   &-button {
-    display: inline-block;
     padding: 5px;
+    height: 40px;
     border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     margin-right: 10px;
     background-color: #4343ff;
     color: white;
@@ -191,25 +204,24 @@ ul {
   }
 
   &-date {
-    padding-right: 2%;
     color: gray;
-    float: left;
-    width: 20%;
+    padding-right: 6%;
   }
 
   &-key {
-    padding-left: 2%;
-    padding-right: 2%;
     color: black;
-    margin: 5px;
+    flex: 1;
+    margin: 0;
     float: right;
     text-transform: lowercase;
   }
 
   &-text {
-    padding-right: 2%;
     float: left;
+    flex: 1;
     width: 20%;
+    padding-right: 6%;
+    margin: 0;
   }
   &-enter {
     display: inline-block;
@@ -222,6 +234,11 @@ ul {
     color: gray;
     font-size: 15px;
     width: 30%;
+  }
+  &-container {
+    width: 100%;
+    display: flex;
+    margin: 0;
   }
 }
 
@@ -716,6 +733,10 @@ ul {
   text-shadow: 1px 1px 2px black;
   font-size: 15px;
   cursor: pointer;
+
+  &:hover {
+    background-color: lightblue;
+  }
 }
 
 .dropdown {
