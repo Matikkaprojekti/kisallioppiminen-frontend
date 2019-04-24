@@ -685,7 +685,8 @@ ul {
 }
 
 .scoreboard {
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
 
   &-light {
     &-green {
