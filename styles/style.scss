@@ -132,12 +132,14 @@ ul {
 .course-admin-page {
   &-key {
     color: black;
+    flex: 1;
     margin: 5px;
     float: right;
     text-transform: lowercase;
+    text-align: right;
     filter: blur(4px);
   }
-  :hover {
+  &-key:hover {
     filter: none;
   }
 }
@@ -187,11 +189,9 @@ ul {
     text-transform: uppercase;
   }
   &-button {
-    display: inline-block;
     padding: 5px;
+    height: 40px;
     border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     margin-right: 10px;
     background-color: #4343ff;
     color: white;
@@ -210,15 +210,18 @@ ul {
 
   &-key {
     color: black;
-    margin: 5px;
+    flex: 1;
+    margin: 0;
     float: right;
     text-transform: lowercase;
   }
 
   &-text {
     float: left;
+    flex: 1;
     width: 20%;
     padding-right: 6%;
+    margin: 0;
   }
   &-enter {
     display: inline-block;
@@ -233,7 +236,9 @@ ul {
     width: 30%;
   }
   &-container {
+    width: 100%;
     display: flex;
+    margin: 0;
   }
 }
 
