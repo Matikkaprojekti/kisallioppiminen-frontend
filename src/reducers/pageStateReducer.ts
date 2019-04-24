@@ -33,6 +33,23 @@ export const pageStateReducer = (state: InitialState | null = null, action: { ty
         }
       }
       break
+    case 'SELECT_COURSE_VERSION':
+      if (typeof window !== 'undefined') {
+        if (state) {
+          const { pageParams } = state
+          const courseId: string = pageParams.pathParams ? pageParams.pathParams.id : ''
+          const pageurl = `/courses/${courseId}/version/${data}/tab/0`
+          window.history.pushState({}, 'Kisällioppiminen', pageurl)
+          return {
+            ...state,
+            pageParams: {
+              ...pageParams,
+              path: pageurl
+            }
+          }
+        }
+      }
+      break
     case 'TOGGLE_ERROR':
       if (state) {
         return {

@@ -562,7 +562,8 @@ ul {
   margin-bottom: 50px; }
 
 .scoreboard {
-  overflow: scroll; }
+  overflow-x: scroll;
+  overflow-y: hidden; }
   .scoreboard-light-green {
     height: 25px;
     width: 25px;
