@@ -54,9 +54,7 @@ const AdminPageChapter = (props: any) => {
           </label>
         </div>
       </div>
-      <div className={contentClassname}>
-        {arr}
-      </div>
+      <div className={contentClassname}>{arr}</div>
     </div>
   )
 }

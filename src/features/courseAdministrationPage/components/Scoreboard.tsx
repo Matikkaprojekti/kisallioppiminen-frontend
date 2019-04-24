@@ -75,8 +75,8 @@ const Scoreboard = ({ course }: { course: { version: string; students: Student[]
       ))
     } else {
       return [
-        <tr>
-          <td>Kurssilla ei ole opiskelijoita</td>
+        <tr key={1}>
+          <td key={2}>Kurssilla ei ole opiskelijoita</td>
         </tr>
       ]
     }
