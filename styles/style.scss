@@ -431,6 +431,7 @@ ul {
   text-transform: uppercase;
 
   &:hover {
+    cursor: pointer;
     background-color: rgb(196, 196, 196);
     text-decoration-line: underline;
   }
@@ -578,7 +579,9 @@ ul {
   border-top-style: hidden;
   display: block;
   overflow: hidden;
-  width: 80%;
+  width: 77%;
+  padding-left: 25px;
+  padding-right: 25px;
 
   &-hidden {
     display: none;
@@ -879,4 +882,14 @@ input:checked + .toggle {
 
 input:checked + .toggle:before {
   transform: translateX(26px);
+}
+
+.chapter-content ul li {
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+  .hero-logo {
+    display: none;
+  }
 }
