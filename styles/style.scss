@@ -887,3 +887,9 @@ input:checked + .toggle:before {
 .chapter-content ul li {
   margin-left: 20px;
 }
+
+@media only screen and (max-width: 900px) {
+  .hero-logo {
+    display: none;
+  }
+}
