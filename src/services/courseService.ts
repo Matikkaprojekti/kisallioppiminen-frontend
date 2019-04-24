@@ -31,6 +31,7 @@ const teacherCourses = async (): Promise<any> => {
 }
 
 const createTeachingInstance = async (instance: TeachingInstance): Promise<any> => {
+  console.log('Sending this to backend:', instance)
   try {
     const response = await HTTP.post(`${baseUrl}/teachinginstances`, instance, getRequestConfig())
     return response.data
