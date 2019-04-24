@@ -102,7 +102,7 @@ ul {
   float: right;
   text-transform: lowercase;
   text-align: right;
-  filter: blur(4px); }
+  filter: blur(6px); }
 
 .course-admin-page-key:hover {
   filter: none; }
@@ -346,6 +346,7 @@ ul {
   color: #111;
   text-transform: uppercase; }
   .exercise:hover {
+    cursor: pointer;
     background-color: #c4c4c4;
     text-decoration-line: underline; }
 
@@ -470,7 +471,9 @@ ul {
   border-top-style: hidden;
   display: block;
   overflow: hidden;
-  width: 80%; }
+  width: 77%;
+  padding-left: 25px;
+  padding-right: 25px; }
   .chapter-content-hidden {
     display: none; }
 
@@ -722,3 +725,10 @@ input:checked + .toggle {
 
 input:checked + .toggle:before {
   transform: translateX(26px); }
+
+.chapter-content ul li {
+  margin-left: 20px; }
+
+@media only screen and (max-width: 900px) {
+  .hero-logo {
+    display: none; } }
