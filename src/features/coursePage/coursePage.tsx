@@ -48,7 +48,7 @@ export function coursePage() {
   const coursePageApp = (props: { pageState: InitialState; coursePageState: CoursePageState; fetchOwnCourses: () => Promise<void>; user: User | null }) => {
     const { pageState, coursePageState, fetchOwnCourses, user } = props
     const courseToRender = resolveCourse(pageState)
-    const courseMaterialVersion = resolveCourseVersion(pageState, courseToRender)
+    const courseMaterialVersion: any = resolveCourseVersion(pageState, courseToRender)
     useEffect(() => {
       if (user) {
         fetchOwnCourses()
@@ -84,7 +84,7 @@ function resolveCourse({ pageParams, courses }: InitialState) {
   return undefined
 }
 
-function resolveCourseVersion({ pageParams }: InitialState, course?: Course) {
+function resolveCourseVersion({ pageParams }: InitialState, course?: Course, version?: any) {
   const { pathParams } = pageParams
   return course
     ? course.courseContent.find(content => {
