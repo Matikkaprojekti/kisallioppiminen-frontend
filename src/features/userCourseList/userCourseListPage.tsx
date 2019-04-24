@@ -63,7 +63,6 @@ export function userCourseListPage() {
         exercises.courseExercises[`${courseId[0].id} ${c.version}`] !== undefined
       ) {
         const exerciseNumbers = exercises.courseExercises[`${courseId[0].id} ${c.version}`].map(e => exercises.idToNumber[e])
-
         const students = c.students.map(s => ({ ...s, exercises: s.exercises.map(ex => ({ ...ex, uuid: exercises.idToNumber[ex.uuid] })) }))
 
         return {
