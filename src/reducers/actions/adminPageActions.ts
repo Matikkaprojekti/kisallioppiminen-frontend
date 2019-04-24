@@ -46,8 +46,7 @@ export const removeUsersInstance = (coursekey: string) => ({
   data: coursekey
 })
 
-export const setNewInstanceFormValue = (value: {[key: string]: any}) => {
-  console.log('fjk')
+export const setNewInstanceFormValue = (value: { [key: string]: any }) => {
   return {
     type: SET_NEW_INSTANCE_FORM_VALUE,
     data: value
