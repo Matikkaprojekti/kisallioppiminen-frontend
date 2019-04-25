@@ -32,8 +32,8 @@ export function courseAdministrationPage() {
       console.log('Hieno funktio')
     }
 
-    const addCourses = (betterCourses: UserCourse[]) =>
-      betterCourses.map((course: UserCourse) => (
+    const addCourses = (courses: UserCourse[]) =>
+      courses.map((course: UserCourse) => (
         <AdminPageChapter
           key={course.coursekey}
           header={course.name}
