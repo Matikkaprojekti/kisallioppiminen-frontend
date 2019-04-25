@@ -29,7 +29,7 @@ export function courseAdministrationPage() {
     }, [])
 
     function deleteInstance(coursekey: string) {
-      console.log('Hieno funktio')
+      console.log('Poistetaan avaimella "', coursekey, '" varustettu kurssi.')
     }
 
     const addCourses = (courses: UserCourse[]) =>

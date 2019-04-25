@@ -72,6 +72,15 @@ export const leaveTeachingInstance = (coursekey: string): any => {
     })
 }
 
+//Sisältö ei ole oikein!!
+export const deleteTeachingInstance = (coursekey: string): any => {
+  return async (dispatch: any) =>
+    courseService.leaveTeachingInstanceService(coursekey).then(() => {
+      dispatch(removeUsersInstance(coursekey))
+      return null
+    })
+}
+
 export const fetchOwnCourses = (): ThunkAction<Promise<any[]>, {}, {}, AnyAction> => {
   return async dispatch =>
     courseService.ownCourses().then((courses: any[]) => {
