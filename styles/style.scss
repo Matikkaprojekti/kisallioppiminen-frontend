@@ -430,6 +430,10 @@ ul {
   color: #111;
   text-transform: uppercase;
 
+  &-hidden {
+    display: none;
+  }
+
   &:hover {
     cursor: pointer;
     background-color: rgb(196, 196, 196);
@@ -447,6 +451,7 @@ ul {
   overflow: hidden;
   border-style: ridge;
   width: 95%;
+
   &-hidden {
     display: none;
   }

@@ -5,15 +5,20 @@ export function NavBottom() {
   const changeExerciseVisibility = () => {
     setOpenExercise(!openExercise)
     if (openExercise) {
+      Array.from(document.getElementsByClassName('exercise')).forEach(element => {
+        if (element !== undefined) {
+          element.className = 'exercise-hidden'
+        }
+      })
       Array.from(document.getElementsByClassName('exercise-content')).forEach(element => {
         if (element !== undefined) {
-          element.className = 'exercise-content exercise-content-hidden'
+          element.className = 'exercise-content-hidden'
         }
       })
     } else {
-      Array.from(document.getElementsByClassName('exercise-content exercise-content-hidden')).forEach(element => {
+      Array.from(document.getElementsByClassName('exercise-hidden')).forEach(element => {
         if (element !== undefined) {
-          element.className = 'exercise-content'
+          element.className = 'exercise'
         }
       })
     }
