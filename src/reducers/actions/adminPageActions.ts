@@ -72,7 +72,7 @@ export const leaveTeachingInstance = (coursekey: string): any => {
     })
 }
 
-//Sisältö ei ole oikein!!
+// Sisältö ei ole oikein!!
 export const deleteTeachingInstance = (coursekey: string): any => {
   return async (dispatch: any) =>
     courseService.leaveTeachingInstanceService(coursekey).then(() => {
