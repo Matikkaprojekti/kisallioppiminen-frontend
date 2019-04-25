@@ -893,3 +893,36 @@ input:checked + .toggle:before {
     display: none;
   }
 }
+
+.maintenance {
+  background-color: yellow;
+  margin-bottom: 50px;
+  height: 160px;
+  box-shadow: 0px 1px 0px 2px #666666;
+
+  &-header-text {
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+    color: black;
+    text-shadow: 1px 1px 2px white;
+    margin-left: 25%;
+    width: 50%;
+  }
+
+  &-text {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    text-shadow: 1px 1px 2px white;
+    margin-left: 25%;
+    width: 50%;
+  }
+  &-hero-logo {
+    position: absolute;
+    margin-top: -170px;
+    width: 300px;
+    cursor: pointer;
+  }
+}
