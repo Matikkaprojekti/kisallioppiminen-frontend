@@ -11,6 +11,7 @@ interface Props {
   startdate: string
   enddate: string
   coursekey: string
+  deleteInstance: (coursekey: string) => void
 }
 
 const AdminPageChapter = (props: Props) => {
@@ -33,7 +34,7 @@ const AdminPageChapter = (props: Props) => {
           <label className="userCourseListPage-date">
             {format(props.startdate, 'DD-MM-YYYY')} - {format(props.enddate, 'DD-MM-YYYY')}
           </label>
-          <button className="userCourseListPage-button">
+          <button className="userCourseListPage-button" onClick={() => props.deleteInstance(props.coursekey)}>
             Poista instanssi
           </button>
         </div>

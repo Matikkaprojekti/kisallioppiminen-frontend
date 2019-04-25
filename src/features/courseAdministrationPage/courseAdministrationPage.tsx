@@ -28,6 +28,26 @@ export function courseAdministrationPage() {
       fetchTeacherCourses()
     }, [])
 
+    function deleteInstance(coursekey: string) {
+      console.log('Hieno funktio')
+    }
+
+    const addCourses = (betterCourses: UserCourse[]) =>
+      betterCourses.map((course: UserCourse) => (
+        <AdminPageChapter
+          key={course.coursekey}
+          header={course.name}
+          coursekey={course.coursekey}
+          startdate={course.startdate}
+          enddate={course.enddate}
+          material={course.coursematerial_name}
+          material_url={`/courses/${course.id}/version/${course.version}/tab/0`}
+          deleteInstance={deleteInstance}
+        >
+          <Scoreboard course={course} />
+        </AdminPageChapter>
+      ))
+
     const betterCourses = teacherCourses.map(c => {
       const course = allCourses.filter(c2 => c.coursematerial_name === c2.courseName)[0]
       if (course && exercises !== null && exercises.courseExercises !== null && exercises.idToNumber !== null) {
@@ -69,21 +89,6 @@ export function courseAdministrationPage() {
       </div>
     )
   }
-
-  const addCourses = (betterCourses: UserCourse[]) =>
-    betterCourses.map((course: UserCourse) => (
-      <AdminPageChapter
-        key={course.coursekey}
-        header={course.name}
-        coursekey={course.coursekey}
-        startdate={course.startdate}
-        enddate={course.enddate}
-        material={course.coursematerial_name}
-        material_url={`/courses/${course.id}/version/${course.version}/tab/0`}
-      >
-        <Scoreboard course={course} />
-      </AdminPageChapter>
-    ))
 
   const mapStateToProps = ({
     exercises,
