@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
-import { User } from '../../../types/InitialState'
 import format from 'date-fns/format'
 import Link from '../../baseComponents/Link'
 
