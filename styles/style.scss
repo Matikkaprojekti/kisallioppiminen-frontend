@@ -518,11 +518,19 @@ ul {
   margin-top: 20px;
   color: aliceblue;
   padding: 10px;
+
+  &-hidden {
+    display: none;
+  }
 }
 
 .theorem-header-content {
   margin: 0px 10px;
   text-transform: uppercase;
+
+  &-hidden {
+    display: none;
+  }
 }
 
 .theorem-content {
@@ -854,6 +862,14 @@ ul {
   opacity: 0;
   width: 0;
   height: 0;
+
+  &:checked + .toggle {
+    background-color: #4fab53;
+  }
+
+  &:checked + .toggle:before {
+    transform: translateX(26px);
+  }
 }
 
 .toggle {
@@ -881,20 +897,20 @@ ul {
   }
 }
 
-input:checked + .toggle {
-  background-color: #4fab53;
-}
-
-input:checked + .toggle:before {
-  transform: translateX(26px);
-}
-
 .chapter-content ul li {
   margin-left: 20px;
 }
 
 @media only screen and (max-width: 900px) {
   .hero-logo {
+    display: none;
+  }
+}
+
+.theory-text {
+  display: block;
+
+  &-hidden {
     display: none;
   }
 }

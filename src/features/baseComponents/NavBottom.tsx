@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 export function NavBottom() {
-  const [openExercise, setOpenExercise] = useState(false)
+  const [openExercise, setOpenExercise] = useState(true)
   const changeExerciseVisibility = () => {
     setOpenExercise(!openExercise)
     if (openExercise) {
@@ -23,10 +23,27 @@ export function NavBottom() {
       })
     }
   }
+  /*const [openTheory, setOpenTheory] = useState(false)
+  const changeTheoryVisibility = () => {
+    setOpenExercise(!openTheory)
+    if (openExercise) {
+      Array.from(document.getElementsByClassName('theory-text')).forEach(element => {
+        if (element !== undefined) {
+          element.className = 'theory-text-hidden'
+        }
+      })
+    } else {
+      Array.from(document.getElementsByClassName('theory-text-hidden')).forEach(element => {
+        if (element !== undefined) {
+          element.className = 'theory-text'
+        }
+      })
+    }
+  }*/
   const [openAll, setOpenAll] = useState(false)
   const changeAllVisibility = () => {
-    setOpenExercise(!openExercise)
-    if (openExercise) {
+    setOpenAll(!openAll)
+    if (openAll) {
       Array.from(document.getElementsByClassName('chapter-content')).forEach(element => {
         if (element !== undefined) {
           element.className = 'chapter-content-hidden'
@@ -38,11 +55,6 @@ export function NavBottom() {
           element.className = 'chapter-content'
         }
       })
-      Array.from(document.getElementsByClassName('exercise-content exercise-content-hidden')).forEach(element => {
-        if (element !== undefined) {
-          element.className = 'exercise-content'
-        }
-      })
     }
   }
 
@@ -51,10 +63,19 @@ export function NavBottom() {
       <span className="navigatorBottom-item">
         Tehtävät
         <label className="switch">
-          <input type="checkbox" onClick={changeExerciseVisibility} />
+          <input type="checkbox" onClick={changeExerciseVisibility} defaultChecked />
           <span className="toggle" />
         </label>
       </span>
+      {/*
+      <span className="navigatorBottom-item">
+        Teoria
+        <label className="switch">
+          <input type="checkbox" onClick={changeTheoryVisibility} defaultChecked />
+          <span className="toggle" />
+        </label>
+      </span>
+      */}
       <span className="navigatorBottom-item">
         Avaa kaikki
         <label className="switch">
