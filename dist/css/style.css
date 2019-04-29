@@ -485,10 +485,16 @@ ul {
   color: aliceblue;
   padding: 10px;
 }
+.theorem-header-hidden {
+  display: none;
+}
 
 .theorem-header-content {
   margin: 0px 10px;
   text-transform: uppercase;
+}
+.theorem-header-content-hidden {
+  display: none;
 }
 
 .theorem-content {
@@ -814,6 +820,12 @@ ul {
   width: 0;
   height: 0;
 }
+.switch input:checked + .toggle {
+  background-color: #4fab53;
+}
+.switch input:checked + .toggle:before {
+  transform: translateX(26px);
+}
 
 .toggle {
   position: absolute;
@@ -839,14 +851,6 @@ ul {
   border-radius: 50%;
 }
 
-input:checked + .toggle {
-  background-color: #4fab53;
-}
-
-input:checked + .toggle:before {
-  transform: translateX(26px);
-}
-
 .chapter-content ul li {
   margin-left: 20px;
 }
@@ -855,4 +859,11 @@ input:checked + .toggle:before {
   .hero-logo {
     display: none;
   }
+}
+
+.theory-text {
+  display: block;
+}
+.theory-text-hidden {
+  display: none;
 }
