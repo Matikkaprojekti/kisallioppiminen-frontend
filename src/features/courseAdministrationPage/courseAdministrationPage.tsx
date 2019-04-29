@@ -29,9 +29,9 @@ export function courseAdministrationPage() {
     }, [])
 
     const betterCourses = teacherCourses.map(c => {
-      const courseId = allCourses.filter(c2 => c.coursematerial_name === c2.courseName)[0].id
-      if (exercises !== null && exercises.courseExercises !== null && exercises.idToNumber !== null) {
-        const exerciseNumbers = exercises.courseExercises[`${courseId} ${c.version}`].map(e => exercises.idToNumber[e])
+      const course = allCourses.filter(c2 => c.coursematerial_name === c2.courseName)[0]
+      if (course && exercises !== null && exercises.courseExercises !== null && exercises.idToNumber !== null) {
+        const exerciseNumbers = exercises.courseExercises[`${course.id} ${c.version}`].map(e => exercises.idToNumber[e])
 
         // Jos kurssilla ei ole opiskelijoita, niin opiskelijalista on syytä asettaa tyhjäksi.
         if (c.students === undefined) {
@@ -42,7 +42,7 @@ export function courseAdministrationPage() {
 
         return {
           ...c,
-          id: courseId,
+          id: course.id,
           exerciseNumbers,
           students
         }
@@ -77,8 +77,10 @@ export function courseAdministrationPage() {
         header={course.name}
         coursekey={course.coursekey}
         startdate={course.startdate}
-        enddate={course.enddate} material={course.coursematerial_name}
-        material_url={`/courses/${course.id}/version/${course.version}/tab/0`}>
+        enddate={course.enddate}
+        material={course.coursematerial_name}
+        material_url={`/courses/${course.id}/version/${course.version}/tab/0`}
+      >
         <Scoreboard course={course} />
       </AdminPageChapter>
     ))
