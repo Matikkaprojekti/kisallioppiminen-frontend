@@ -6,7 +6,7 @@ import NewInstanceForm from './components/NewInstanceForm'
 import { ExercisesState, Course, CoursePageState, InitialState, AdminPageState } from './../../types/InitialState'
 import { UserCourse, TeachingInstance } from '../../types/jsontypes'
 import { ThunkDispatch } from 'redux-thunk'
-import { fetchTeacherCourses as fetchTeacherCoursesAction, createTeacherCourse as createTeacherCourseAction } from '../../reducers/actions/adminPageActions'
+import { fetchTeacherCourses as fetchTeacherCoursesAction, createTeacherCourse as createTeacherCourseAction, deleteTeachingInstance as deleteTeachingInstanceAction } from '../../reducers/actions/adminPageActions'
 
 export function courseAdministrationPage() {
   const [open, setOpen] = useState(false)
@@ -17,11 +17,13 @@ export function courseAdministrationPage() {
     exercises,
     allCourses,
     fetchTeacherCourses,
+    deleteTeachingInstance,
     teacherCourses
   }: {
     exercises: ExercisesState
     allCourses: Course[]
     fetchTeacherCourses: () => Promise<void>
+    deleteTeachingInstance: (coursekey: string) => Promise<void>
     teacherCourses: UserCourse[]
   }) => {
     useEffect(() => {
@@ -30,6 +32,7 @@ export function courseAdministrationPage() {
 
     function deleteInstance(coursekey: string) {
       console.log('Poistetaan avaimella "', coursekey, '" varustettu kurssi.')
+      deleteTeachingInstance(coursekey)
     }
 
     const addCourses = (courses: UserCourse[]) =>
@@ -106,6 +109,9 @@ export function courseAdministrationPage() {
   const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
     fetchTeacherCourses: async () => {
       await dispatch(fetchTeacherCoursesAction())
+    },
+    deleteTeachingInstance: async (coursekey: string) => {
+      await dispatch(deleteTeachingInstanceAction(coursekey))
     }
   })
 
