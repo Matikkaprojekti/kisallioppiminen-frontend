@@ -430,7 +430,12 @@ ul {
   color: #111;
   text-transform: uppercase;
 
+  &-hidden {
+    display: none;
+  }
+
   &:hover {
+    cursor: pointer;
     background-color: rgb(196, 196, 196);
     text-decoration-line: underline;
   }
@@ -446,6 +451,7 @@ ul {
   overflow: hidden;
   border-style: ridge;
   width: 95%;
+
   &-hidden {
     display: none;
   }
@@ -512,11 +518,19 @@ ul {
   margin-top: 20px;
   color: aliceblue;
   padding: 10px;
+
+  &-hidden {
+    display: none;
+  }
 }
 
 .theorem-header-content {
   margin: 0px 10px;
   text-transform: uppercase;
+
+  &-hidden {
+    display: none;
+  }
 }
 
 .theorem-content {
@@ -578,7 +592,9 @@ ul {
   border-top-style: hidden;
   display: block;
   overflow: hidden;
-  width: 80%;
+  width: 77%;
+  padding-left: 25px;
+  padding-right: 25px;
 
   &-hidden {
     display: none;
@@ -846,6 +862,14 @@ ul {
   opacity: 0;
   width: 0;
   height: 0;
+
+  &:checked + .toggle {
+    background-color: #4fab53;
+  }
+
+  &:checked + .toggle:before {
+    transform: translateX(26px);
+  }
 }
 
 .toggle {
@@ -873,10 +897,20 @@ ul {
   }
 }
 
-input:checked + .toggle {
-  background-color: #4fab53;
+.chapter-content ul li {
+  margin-left: 20px;
 }
 
-input:checked + .toggle:before {
-  transform: translateX(26px);
+@media only screen and (max-width: 900px) {
+  .hero-logo {
+    display: none;
+  }
+}
+
+.theory-text {
+  display: block;
+
+  &-hidden {
+    display: none;
+  }
 }

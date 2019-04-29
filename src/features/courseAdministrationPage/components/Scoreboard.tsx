@@ -2,7 +2,7 @@ import React from 'react'
 import Light from './Light'
 import { Student, Exercise } from '../../../types/jsontypes'
 
-const Scoreboard = ({ course }: { course: { version: string; students: Student[]; exerciseNumbers: string[] } }) => {
+const Scoreboard = ({ course }: { course: { version: string; students: Student[]; exerciseNumbers: string[]; coursekey: string; coursematerial_name: string } }) => {
   const { students } = course
   const numberToOrder: { [i: string]: number } = {}
   let index = 0
@@ -93,7 +93,7 @@ const Scoreboard = ({ course }: { course: { version: string; students: Student[]
           <tr>
             <th> </th>
             {course.exerciseNumbers.map((e: string) => (
-              <th key={`${e} ${course.version}`}>{e}</th>
+              <th key={`${e} ${course.coursematerial_name} ${course.version} ${course.coursekey}`}>{e}</th>
             ))}
           </tr>
           {createTableRows()}

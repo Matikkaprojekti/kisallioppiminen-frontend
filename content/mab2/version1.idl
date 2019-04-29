@@ -1,55 +1,883 @@
 [CourseNumberer]
-[CourseSection header:'MAY1']
-[Chapter header:'Luonnolliset luvut ja kokonaisluvut']
-[Exercise UUID:'12a9f390-3b49-11e9-a38a-09f848b19644' header:'Helppo tehtävä (auki)' open:true]
-liian helppo tehtävä
 
-[/Exercise]
-[Theorem header:'heeteri' /]
-[Answer]
-kaikki vastaukset ovat oikein
-[/Answer]
-[Exercise UUID:'12a9f391-3b49-11e9-a38a-09f848b19644' header:'Helppo tehtävä (auki)' open:true]
-liian helppo tehtävä
+[CourseSection header:'MAA3']
 
-[/Exercise]
+[Chapter header:'Kurssin tavoitteet ja keskeiset sisällöt']
+### Kurssin tavoitteena on, että
+
+* harjaannut hahmottamaan ja kuvaamaan tilaa sekä muotoa koskevaa tietoa sekä kaksi- että kolmiulotteisissa tilanteissa
+* harjaannut muotoilemaan, perustelemaan ja käyttämään geometrista tietoa käsitteleviä lauseita
+* osaat ratkaista geometrisia ongelmia käyttäen hyväksi kuvioiden ja kappaleiden ominaisuuksia, yhdenmuotoisuutta, Pythagoraan lausetta sekä suora- ja vinokulmaisen kolmion trigonometriaa
+* osaat käyttää teknisiä apuvälineitä kuvioiden ja kappaleiden tutkimisessa ja geometriaan liittyvien sovellusongelmien ratkaisussa.
+
+### KESKEISET SISÄLLÖT
+
+* kuvioiden ja kappaleiden yhdenmuotoisuus
+* sini- ja kosinilause
+* ympyrän, sen osien ja siihen liittyvien suorien geometria
+* kuvioihin ja kappaleisiin liittyvien pituuksien, kulmien, pinta-alojen ja tilavuuksien laskeminen
+
 [/Chapter]
-[Chapter header:'Toka chapteri']
-[Exercise UUID:'12a9f392-3b49-11e9-a38a-09f848b19644' header:'Helppo tehtävä (auki)' open:true]
-liian helppo tehtävä
+
+[Chapter header:'Opiskeluohjeita']
+
+Kurssimateriaali on jaettu kolmeen lukuun: Kolmio, Tasogeometriaa ja Avaruusgeometriaa.
+
+Pääajatus kurssimateriaalissa on, että matematiikkaa oppii parhaiten tekemällä matematiikkaa. 
+Materiaali on tämän vuoksi kirjoitettu niin, että teet tehtäviä käytännössä koko ajan. 
+Jokainen luku sisältää kolme eri tehtäväsarjaa. Ensimmäisen tehtäväsarjan tehtävät ovat teorian seassa. 
+Tarkoitus on, että etenet materiaalissa tekemällä jokaisen näistä tehtävistä. 
+Voit hyvin tehdä tehtäviä yhdessä kaverin kanssa ja voit kysyä opettajalta heti, jos et ymmärrä jotain asiaa. 
+Asia voi olla jokin tietty tehtävä, teoriassa oleva virke tai esimerkiksi vieras matemaattinen symboli. 
+Pääasia on, että sinä itse teet tehtävät ja ymmärrät, mitä teet. 
+Tämän tehtäväsarjan jälkeen kyseisen luvun teoria on käsitelty ja on aika harjoitella ja syventää juuri opittua. 
+Ennen tätä opettaja pitää ehkä yhteisen opetustuokion tai -keskustelun, jossa pohditaan yhdessä luvun keskeisiä asioita tai 
+työskentelyssä esiin tulleita haastavia kohtia. Mahdollisen opetustuokion jälkeen jatka harjoittelua luvun
+lopussa olevien kahden tehtäväsarjan tehtävien avulla. Luonnollisesti mitä enemmän harjoittelet, sitä paremmaksi tulet. 
+Kun olet valmis, tee luvun lopussa oleva(t) itsearviointitesti(t). Niiden tarkoitus on kertoa sinulle, oletko ymmärtänyt 
+luvun olennaiset asiat ja kehittää samalla oman oppimisesi arviointia, joka on tärkeä tulevaisuuden taito. 
+Testeissä pärjääminen ei vielä tarkoita, että osaat luvun asiat esimerkiksi kiitettävällä tasolla, vaan testit 
+eskittyvät vahvan perusosaamisen tutkimiseen. Ennen siirtymistä seuraavaan lukuun opettaja haluaa ehkä vielä koota luvussa 
+opittuja asioita sekä antaa palautetta oppimisesta ja sen etenemisestä yhteisessä opetuskeskustelussa.
+[/Chapter]
+
+[/CourseSection]
+
+[CourseSection header:'Kolmio']
+[Chapter header:'LUVUN TAVOITTEET'] 
+
+[Definition header:'abc']
+Tämän luvun tavoitteena on, että osaat ratkaista erilaisia geometrisia ongelmia kolmioiden avulla. Osaat
+
+* laskea kolmion pinta-alan
+* tunnistaa vierus- ja ristikulmat sekä samankohtaiset kulmat ja päätellä niiden suuruud
+* perustella kolmioiden yhdenmuotoisuuden ja hyödyntää sitä geometristen ongelmien ratkaisussa
+* määrittää kolmioiden sivujen pituuksia ja kulmien suuruuksia Pythagoraan lauseen, trigonometristen suhteiden sekä sini- ja kosinilauseiden avulla
+* päätellä suplementtikulman sinin ja kosinin arvot.
+[/Definition]
+
+[/Chapter]
+
+[Chapter header:'KOLMION PINTA-ALA JA KULMAT'] 
+
+Kolmioita voidaan käyttää apuna monien geometristen ongelmien ratkaisemisessa. 
+Aloitammekin tämän kurssin palauttamalla mieleen kolmioiden geometrisia ominaisuuksia.
+
+Kolmioiden ja muiden tasokuvioiden pinta-alan laskemiseksi tarvitaan sopimus siitä, mitä pinta-alalla tarkoitetaan. 
+Lähtökohdaksi voidaan ottaa suorakulmion pinta-ala. Sovitaan siis ensin, mitä suorakulmion pinta-alalla tarkoitetaan. 
+Asetetaan seuraava määritelmä:
+
+[Definition header:'MÄÄRITELMÄ: SUORAKULMION PINTA-ALA']
+
+Suorakulmion *pinta-ala* on samasta kärjestä alkavien sivujen pituuksien tulo eli alla olevan kuvion merkinnöillä ab. 
+
+[Picture imagesrc:'/img/maa3/suoraK04.png' /]
+[/Definition]
+
+[Exercise UUID:'12a9cc84-3b49-11e9-a38a-09f848b19644' header:'SUORAKULMION PINTA-ALA' open:true]
+
+Kansainvälisissä aikuisten jalkapallo-otteluissa kentän leveyden on oltava vähintään 64 m ja enintään 75 m. 
+Kentän pituuden on oltava vähintään 100 m ja enintään 110 m.
+
+(a) Laske suurimman ja pienimmän mahdollisen jalkapallokentän pinta-alojen erotus.
+
+(b) Kuinka monta prosenttia suurin mahdollinen kenttä on isompi kuin pienin mahdollinen kenttä?
+
+[Answer]
+
+(a) [Equation]1850 m^2[/Equation]
+
+(b) [Equation]Noin 29 \%.[/Equation]
+
+[/Answer]
 
 [/Exercise]
-[Theorem header:'heeteri' /]
-[Answer]
-kaikki vastaukset ovat oikein
-[/Answer]
+
+Suorakulmion pinta-alan avulla saadaan johdettua lauseke kolmion pinta-alalle.
+
+[Exercise UUID:'12a9cc85-3b49-11e9-a38a-09f848b19644' header:'KOLMION PINTA-ALA ']
+
+[Picture imagesrc:'/img/maa3/suoraK17.png' /]
+
+(a) Piirrä yllä olevan kuvan kolmio vihkoosi ja täydennä se suorakulmioksi.
+
+(b) Muodosta suorakulmion pinta-alan lauseke.
+
+(c) Päättele kolmion pinta-ala.
+
+[/Exercise]
+
+[Exercise UUID:'12a9cc86-3b49-11e9-a38a-09f848b19644' header:'KOLMION PINTA-ALA']
+
+[Picture imagesrc:'/img/maa3/suoraK05.png' /]
+
+(a) Piirrä yllä olevan kuvan kolmio vihkoosi ja täydennä se suorakulmioksi. 
+Vinkki: voit esimerkiksi soveltaa edellisen tehtävän ideaa kumpaankin kuvassa näkyvään suorakulmaiseen kolmioon.
+
+(b) Muodosta suorakulmion pinta-alan lauseke.
+
+(c) Päättele kolmion pinta-ala.
+
+[/Exercise]
+
+Edellisten tehtävien tulokset ovat osa seuraavaa teoreemaa. 
+Lue teoreema ja sen perustelu huolellisesti. Mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. 
+Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
+
+[Theorem header:'KOLMION PINTA-ALA (TEOREEMA 1)']
+Kolmion pinta-ala on puolet sen kannan ja korkeuden tulosta eli alla olevan kuvion merkinnöillä
+[Equation]\frac {a}{h}[/Equation]
+
+[Picture imagesrc:'/img/maa3/suoraK05.png' /]
+[/Theorem]
+
+[Proof]
+Perustelu: Kolmion korkeusjanan toinen päätepiste voi sijaita kolmion sivun päätepisteessä, kolmion sivulla tai sivun jatkeella.
+Tarkastellaan jokainen näistä tapauksista erikseen.
+
+1. Tapaus, jossa kolmion korkeusjanan toinen päätepiste sijaitsee kolmion sivun päätepisteessä, on käsitelty tehtävässä 1.2.
+
+[Picture imagesrc:'/img/maa3/suoraK18.png' /]
+
+2. Tapaus, jossa kolmion korkeusjanan toinen päätepiste sijaitsee kolmion sivulla, on käsitelty tehtävässä 1.3.
+
+[Picture imagesrc:'/img/maa3/suoraK05.png' /]
+
+3. Jos kolmion korkeusjanan toinen päätepiste sijaitsee kolmion sivun jatkeella,
+voidaan kolmio täydentää suorakulmaiseksi kolmioksi, jonka pinta-ala on tehtävän 1.2 nojalla
+[Equation]\frac {(a+x)h}{2}[/Equation]
+
+[Picture imagesrc:'/img/maa3/suoraK08.png' /]
+
+Alkuperäisen kolmion pinta-ala saadaan tästä vähentämällä pienemmän suorakulmaisen kolmion pinta-ala:
+[Equation]\frac {(a+x)h}{2} - \frac {x}{h} = \frac {(ah+xh-xh)}{2} = \frac {ah}{2}[/Equation]
+[/Proof]
 [/Chapter]
 [/CourseSection]
 
-[CourseSection header:'uusi tabi']
-[Chapter header:'Luonnolliset luvut ja kokonaisluvut']
-[Exercise UUID:'12a9f393-3b49-11e9-a38a-09f848b19644' header:'Helppo tehtävä (auki)' open:true]
-liian helppo tehtävä
+[CourseSection header:'Tasogeometriaa']
 
-[/Exercise]
-[Theorem header:'heeteri' /]
+[Chapter header:'pelkkä tehtävä']
+
+[Exercise UUID:'12a9cc87-3b49-11e9-a38a-09f848b19644' header:'miinus lasku']
+
+[Equation]5-3?[/Equation]
+
 [Answer]
-kaikki vastaukset ovat oikein
+[Equation]5-3=2[/Equation]
 [/Answer]
-[Exercise UUID:'12a9f394-3b49-11e9-a38a-09f848b19644' header:'Helppo tehtävä (auki)' open:true]
-liian helppo tehtävä
-
 [/Exercise]
 [/Chapter]
-[Chapter header:'Toka chapteri']
-[Exercise UUID:'12a9f395-3b49-11e9-a38a-09f848b19644' header:'Helppo tehtävä (auki)' open:true]
-liian helppo tehtävä
 
-[/Exercise]
-[Theorem header:'heeteri' /]
+[Chapter header:'tyhjä'/]
+[/CourseSection]
+[CourseSection header:'Paljon tehtäviä']
+
+[Chapter header:'pelkkä tehtävä']
+
+[Exercise UUID:'12a9cc87-3b49-11e9-a38a-09f848b19644' header:'miinus lasku']
+[Equation]5-3?[/Equation]
 [Answer]
-kaikki vastaukset ovat oikein
+[Equation]5-3=2[/Equation]
 [/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92970-668c-11e9-b1f0-815f9fc2cf9f' header:'miinus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92971-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92972-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92973-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92974-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92975-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92976-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92977-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92978-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92979-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9297a-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9297b-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9297c-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9297d-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9297e-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9297f-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92980-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92981-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92982-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92983-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92984-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92985-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92986-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92987-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92988-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92989-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9298a-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9298b-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9298c-668c-11e9-b1f0-815f9fc2cf9f' header:'Kertolasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9298d-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9298e-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9298f-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92990-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92991-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92992-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92993-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92994-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92995-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92996-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92997-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92998-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca92999-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9299a-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9299b-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9299c-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9299d-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9299e-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95080-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95081-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95082-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95083-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95084-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95085-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95086-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95087-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95088-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95089-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9508a-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9508b-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9508c-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9508d-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9508e-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9508f-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95090-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95091-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95092-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95093-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95094-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95095-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95096-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95097-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95098-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca95099-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+
+[Exercise UUID:'fca9509a-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9509b-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9509c-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9509d-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9509e-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca9509f-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a0-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a1-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a2-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a3-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a4-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a5-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a6-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a7-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a8-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950a9-668c-11e9-b1f0-815f9fc2cf9f' header:'Salainen lasku']
+[Equation]1337-3?[/Equation]
+[Answer]
+[Equation]1337-3=1334[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950aa-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950ab-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950ac-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950ad-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950ae-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950af-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950b0-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950b1-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950b2-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+[Exercise UUID:'fca950b3-668c-11e9-b1f0-815f9fc2cf9f' header:'Plus lasku']
+[Equation]5-3?[/Equation]
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
+
+
 [/Chapter]
+
 [/CourseSection]
 [/CourseNumberer]
