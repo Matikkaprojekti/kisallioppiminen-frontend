@@ -1,14 +1,190 @@
+// CourseNumberer on komponentti jonka sisälle laitetaan koko kurssi, 
+// sen avulla tehdään kaikki automaattinen numerointi (esim. tehtävät ja kurssin osat)
 [CourseNumberer]
-[CourseSection header:'MAA4']
-[Chapter header:'Luvun tavoitteet']
-[Equation]1 \% = \frac {1}{100} = 0{,}01.[/Equation]
+
+// CourseSectionilla luodaan uusi luku. Luvut numeroitaan automaattisesti.
+[CourseSection header:'MAA3']
+
+// Chapterilla luodaan kurssin luvulle uusi kappale. 
+[Chapter header:'Kurssin tavoitteet ja keskeiset sisällöt']
+### Kurssin tavoitteena on, että
+
+* harjaannut hahmottamaan ja kuvaamaan tilaa sekä muotoa koskevaa tietoa sekä kaksi- että kolmiulotteisissa tilanteissa
+* harjaannut muotoilemaan, perustelemaan ja käyttämään geometrista tietoa käsitteleviä lauseita
+* osaat ratkaista geometrisia ongelmia käyttäen hyväksi kuvioiden ja kappaleiden ominaisuuksia, yhdenmuotoisuutta, Pythagoraan lausetta sekä suora- ja vinokulmaisen kolmion trigonometriaa
+* osaat käyttää teknisiä apuvälineitä kuvioiden ja kappaleiden tutkimisessa ja geometriaan liittyvien sovellusongelmien ratkaisussa.
+
+### KESKEISET SISÄLLÖT
+
+* kuvioiden ja kappaleiden yhdenmuotoisuus
+* sini- ja kosinilause
+* ympyrän, sen osien ja siihen liittyvien suorien geometria
+* kuvioihin ja kappaleisiin liittyvien pituuksien, kulmien, pinta-alojen ja tilavuuksien laskeminen
+
+[/Chapter]
+
+[Chapter header:'Opiskeluohjeita']
+
+Kurssimateriaali on jaettu kolmeen lukuun: Kolmio, Tasogeometriaa ja Avaruusgeometriaa.
+
+Pääajatus kurssimateriaalissa on, että matematiikkaa oppii parhaiten tekemällä matematiikkaa. 
+Materiaali on tämän vuoksi kirjoitettu niin, että teet tehtäviä käytännössä koko ajan. 
+Jokainen luku sisältää kolme eri tehtäväsarjaa. Ensimmäisen tehtäväsarjan tehtävät ovat teorian seassa. 
+Tarkoitus on, että etenet materiaalissa tekemällä jokaisen näistä tehtävistä. 
+Voit hyvin tehdä tehtäviä yhdessä kaverin kanssa ja voit kysyä opettajalta heti, jos et ymmärrä jotain asiaa. 
+Asia voi olla jokin tietty tehtävä, teoriassa oleva virke tai esimerkiksi vieras matemaattinen symboli. 
+Pääasia on, että sinä itse teet tehtävät ja ymmärrät, mitä teet. 
+Tämän tehtäväsarjan jälkeen kyseisen luvun teoria on käsitelty ja on aika harjoitella ja syventää juuri opittua. 
+Ennen tätä opettaja pitää ehkä yhteisen opetustuokion tai -keskustelun, jossa pohditaan yhdessä luvun keskeisiä asioita tai 
+työskentelyssä esiin tulleita haastavia kohtia. Mahdollisen opetustuokion jälkeen jatka harjoittelua luvun
+lopussa olevien kahden tehtäväsarjan tehtävien avulla. Luonnollisesti mitä enemmän harjoittelet, sitä paremmaksi tulet. 
+Kun olet valmis, tee luvun lopussa oleva(t) itsearviointitesti(t). Niiden tarkoitus on kertoa sinulle, oletko ymmärtänyt 
+luvun olennaiset asiat ja kehittää samalla oman oppimisesi arviointia, joka on tärkeä tulevaisuuden taito. 
+Testeissä pärjääminen ei vielä tarkoita, että osaat luvun asiat esimerkiksi kiitettävällä tasolla, vaan testit 
+eskittyvät vahvan perusosaamisen tutkimiseen. Ennen siirtymistä seuraavaan lukuun opettaja haluaa ehkä vielä koota luvussa 
+opittuja asioita sekä antaa palautetta oppimisesta ja sen etenemisestä yhteisessä opetuskeskustelussa.
+[/Chapter]
+
+[/CourseSection]
+
+[CourseSection header:'Kolmio']
+[Chapter header:'LUVUN TAVOITTEET'] 
+
+[Definition header:'']
+Tämän luvun tavoitteena on, että osaat ratkaista erilaisia geometrisia ongelmia kolmioiden avulla. Osaat
+
+* laskea kolmion pinta-alan
+* tunnistaa vierus- ja ristikulmat sekä samankohtaiset kulmat ja päätellä niiden suuruud
+* perustella kolmioiden yhdenmuotoisuuden ja hyödyntää sitä geometristen ongelmien ratkaisussa
+* määrittää kolmioiden sivujen pituuksia ja kulmien suuruuksia Pythagoraan lauseen, trigonometristen suhteiden sekä sini- ja kosinilauseiden avulla
+* päätellä suplementtikulman sinin ja kosinin arvot.
+[/Definition]
+
+[/Chapter]
+
+[Chapter header:'KOLMION PINTA-ALA JA KULMAT'] 
+
+Kolmioita voidaan käyttää apuna monien geometristen ongelmien ratkaisemisessa. 
+Aloitammekin tämän kurssin palauttamalla mieleen kolmioiden geometrisia ominaisuuksia.
+
+Kolmioiden ja muiden tasokuvioiden pinta-alan laskemiseksi tarvitaan sopimus siitä, mitä pinta-alalla tarkoitetaan. 
+Lähtökohdaksi voidaan ottaa suorakulmion pinta-ala. Sovitaan siis ensin, mitä suorakulmion pinta-alalla tarkoitetaan. 
+Asetetaan seuraava määritelmä:
+
+[Definition header:'MÄÄRITELMÄ: SUORAKULMION PINTA-ALA']
+
+Suorakulmion *pinta-ala* on samasta kärjestä alkavien sivujen pituuksien tulo eli alla olevan kuvion merkinnöillä ab. 
+
+// Picture komponentin jälkeen täyttyy olla tyhjä rivi
+// Kommenttien ja Picture komponentin välissä on hyvä olla väli
+
+[Picture imagesrc:'/img/maa3/suoraK04.png' /]
+[/Definition]
+// Komponentilla voidaan luoda tehtävä. Tehtävissä on automaattinen numerointi. 
+// Open-parametri ei ole pakollinen, vaan voidaan lisätä mikäli halutaan tehtävän olevan 
+// valmiiksi auki. Exercise-komponentti sisältää myös UUIXD:n, joka lisätään scriptillä. 
+// Älä siis kirjoita tehtäviin UUID-kenttää manuaalisesti.
+
+[Exercise UUID:'209643f0-66a0-11e9-95a9-3ddb843dfeac' header:'SUORAKULMION PINTA-ALA' open:true]
+
+Kansainvälisissä aikuisten jalkapallo-otteluissa kentän leveyden on oltava vähintään 64 m ja enintään 75 m. 
+Kentän pituuden on oltava vähintään 100 m ja enintään 110 m.
+
+(a) Laske suurimman ja pienimmän mahdollisen jalkapallokentän pinta-alojen erotus.
+
+(b) Kuinka monta prosenttia suurin mahdollinen kenttä on isompi kuin pienin mahdollinen kenttä?
+
+// Vastaus, jota käytetään Exercise-komponentin sisällä. 
+
+[Answer]
+
+(a) [Equation]1850 m^2[/Equation]
+
+(b) [Equation]Noin 29 \%.[/Equation]
+
+[/Answer]
+
+[/Exercise]
+
+Suorakulmion pinta-alan avulla saadaan johdettua lauseke kolmion pinta-alalle.
+
+[Exercise UUID:'209643f1-66a0-11e9-95a9-3ddb843dfeac' header:'KOLMION PINTA-ALA ']
+
+[Picture imagesrc:'/img/maa3/suoraK17.png' /]
+
+(a) Piirrä yllä olevan kuvan kolmio vihkoosi ja täydennä se suorakulmioksi.
+
+(b) Muodosta suorakulmion pinta-alan lauseke.
+
+(c) Päättele kolmion pinta-ala.
+
+[/Exercise]
+
+[Exercise UUID:'209643f2-66a0-11e9-95a9-3ddb843dfeac' header:'KOLMION PINTA-ALA']
+
+[Picture imagesrc:'/img/maa3/suoraK05.png' /]
+
+(a) Piirrä yllä olevan kuvan kolmio vihkoosi ja täydennä se suorakulmioksi. 
+Vinkki: voit esimerkiksi soveltaa edellisen tehtävän ideaa kumpaankin kuvassa näkyvään suorakulmaiseen kolmioon.
+
+(b) Muodosta suorakulmion pinta-alan lauseke.
+
+(c) Päättele kolmion pinta-ala.
+
+[/Exercise]
+
+Edellisten tehtävien tulokset ovat osa seuraavaa teoreemaa. 
+Lue teoreema ja sen perustelu huolellisesti. Mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. 
+Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
+
+// Määritellään uusi teoria-osuus 
+
+[Theorem header:'KOLMION PINTA-ALA (TEOREEMA 1)']
+Kolmion pinta-ala on puolet sen kannan ja korkeuden tulosta eli alla olevan kuvion merkinnöillä
+[Equation]\frac {a}{h}[/Equation]
+
+[Picture imagesrc:'/img/maa3/suoraK05.png' /]
+[/Theorem]
+
+// Teorian-osuuden liitteeksi voidaan liittää perustelut teorialle.
+
+[Proof]
+Perustelu: Kolmion korkeusjanan toinen päätepiste voi sijaita kolmion sivun päätepisteessä, kolmion sivulla tai sivun jatkeella.
+Tarkastellaan jokainen näistä tapauksista erikseen.
+
+1. Tapaus, jossa kolmion korkeusjanan toinen päätepiste sijaitsee kolmion sivun päätepisteessä, on käsitelty tehtävässä 1.2.
+[Picture imagesrc:'/img/maa3/suoraK18.png' /]
+
+2. Tapaus, jossa kolmion korkeusjanan toinen päätepiste sijaitsee kolmion sivulla, on käsitelty tehtävässä 1.3.
+
+[Picture imagesrc:'/img/maa3/suoraK05.png' /]
+
+3. Jos kolmion korkeusjanan toinen päätepiste sijaitsee kolmion sivun jatkeella,
+voidaan kolmio täydentää suorakulmaiseksi kolmioksi, jonka pinta-ala on tehtävän 1.2 nojalla
+[Equation]\frac {(a+x)h}{2}[/Equation]
+
+[Picture imagesrc:'/img/maa3/suoraK08.png' /]
+
+Alkuperäisen kolmion pinta-ala saadaan tästä vähentämällä pienemmän suorakulmaisen kolmion pinta-ala:
+[Equation]\frac {(a+x)h}{2} - \frac {x}{h} = \frac {(ah+xh-xh)}{2} = \frac {ah}{2}[/Equation]
+[/Proof]
 [/Chapter]
 [/CourseSection]
 
-[CourseSection header:'Vektorit ja xy-koordinaatisto']
-[Chapter header:'v2: Luvun tavoitteet']
-// Olen kommentti
-Tässä tavoitteet2.
+[CourseSection header:'Tasogeometriaa']
+
+[Chapter header:'pelkkä tehtävä']
+
+[Exercise UUID:'209643f3-66a0-11e9-95a9-3ddb843dfeac' header:'miinus lasku']
+
+[Equation]5-3?[/Equation]
+
+[Answer]
+[Equation]5-3=2[/Equation]
+[/Answer]
+[/Exercise]
 [/Chapter]
+
+[Chapter header:'tyhjä'/]
 [/CourseSection]
 [/CourseNumberer]

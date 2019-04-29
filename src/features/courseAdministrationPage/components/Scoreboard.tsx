@@ -58,6 +58,10 @@ const Scoreboard = ({ course }: { course: { version: string; students: Student[]
     ))
 
   const sortExercises = (student: { exercises: Exercise[] }) => {
+    student.exercises = student.exercises.filter((e1: Exercise) => {
+      return e1.uuid
+    })
+
     student.exercises = student.exercises.sort((e1: Exercise, e2: Exercise) => numberToOrder[e1.uuid] - numberToOrder[e2.uuid])
   }
   // A better unique key for the tr-elements is probably needed!

@@ -122,8 +122,8 @@ ul {
   float: right;
   text-transform: lowercase;
   text-align: right;
-  filter: blur(6px);
-}
+  filter: blur(6px); }
+
 
 .course-admin-page-key:hover {
   filter: none;
