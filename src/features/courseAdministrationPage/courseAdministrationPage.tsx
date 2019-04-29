@@ -3,10 +3,13 @@ import { connect } from 'react-redux'
 import AdminPageChapter from './components/AdminPageChapter'
 import Scoreboard from './components/Scoreboard'
 import NewInstanceForm from './components/NewInstanceForm'
-import { ExercisesState, Course, CoursePageState, InitialState, AdminPageState } from './../../types/InitialState'
-import { UserCourse, TeachingInstance } from '../../types/jsontypes'
+import { ExercisesState, Course, InitialState, AdminPageState } from './../../types/InitialState'
+import { UserCourse } from '../../types/jsontypes'
 import { ThunkDispatch } from 'redux-thunk'
-import { fetchTeacherCourses as fetchTeacherCoursesAction, createTeacherCourse as createTeacherCourseAction, deleteTeachingInstance as deleteTeachingInstanceAction } from '../../reducers/actions/adminPageActions'
+import {
+  fetchTeacherCourses as fetchTeacherCoursesAction,
+  deleteTeachingInstance as deleteTeachingInstanceAction
+} from '../../reducers/actions/adminPageActions'
 
 export function courseAdministrationPage() {
   const [open, setOpen] = useState(false)
