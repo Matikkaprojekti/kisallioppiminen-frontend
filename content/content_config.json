@@ -85,6 +85,17 @@
     ]
   },
   {
+    "id": "9337",
+    "courseName": "MAB3 - Geometria",
+    "quickLinks": ["Kolmio", "Neliö"],
+    "contentFiles": [
+      {
+        "version": "Versio-1",
+        "path": "./content/mab3/versio1.idl"
+      }
+    ]
+  },
+  {
     "id": "1231265",
     "courseName": "Komponentit",
     "quickLinks": ["Komponenttilistaus"],
