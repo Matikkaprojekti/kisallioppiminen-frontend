@@ -34,8 +34,9 @@ export function courseAdministrationPage() {
     }, [])
 
     function deleteInstance(coursekey: string) {
-      console.log('Poistetaan avaimella "', coursekey, '" varustettu kurssi.')
-      deleteTeachingInstance(coursekey)
+      if (window.confirm('Haluatko varmasti poistaa opetusinstanssin ja kaikki sen tiedot?\nPoistettuja tietoja ei voida enää palauttaa.')) {
+        deleteTeachingInstance(coursekey)
+      }
     }
 
     const addCourses = (courses: UserCourse[]) =>
