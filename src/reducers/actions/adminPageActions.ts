@@ -13,6 +13,7 @@ export const REMOVE_STUDENTS_COURSE = 'REMOVE_STUDENTS_COURSE'
 export const ADD_OWN_COURSE = 'ADD_OWN_COURSE'
 export const ADD_TECHER_COURSE = 'ADD_TEACHER_COURSE'
 export const SET_NEW_INSTANCE_FORM_VALUE = 'SET_NEW_INSTANCE_FORM_VALUE'
+export const DELETE_TEACHING_INSTANCE = 'DELETE_TEACHING_INSTANCE'
 
 export const setTeacherCourses = (courses: any[]) => ({
   type: SET_TEACHER_COURSES,
@@ -46,6 +47,11 @@ export const removeUsersInstance = (coursekey: string) => ({
   data: coursekey
 })
 
+export const removeTeachingInstance = (coursekey: string) => ({
+  type: DELETE_TEACHING_INSTANCE,
+  data: coursekey
+})
+
 export const setNewInstanceFormValue = (value: { [key: string]: any }) => {
   return {
     type: SET_NEW_INSTANCE_FORM_VALUE,
@@ -68,6 +74,14 @@ export const leaveTeachingInstance = (coursekey: string): any => {
   return async (dispatch: any) =>
     courseService.leaveTeachingInstanceService(coursekey).then(() => {
       dispatch(removeUsersInstance(coursekey))
+      return null
+    })
+}
+
+export const deleteTeachingInstance = (coursekey: string): any => {
+  return async (dispatch: any) =>
+    courseService.deleteTeachingInstanceService(coursekey).then(() => {
+      dispatch(removeTeachingInstance(coursekey))
       return null
     })
 }

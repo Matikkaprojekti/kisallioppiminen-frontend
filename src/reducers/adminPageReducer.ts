@@ -30,6 +30,11 @@ export const adminPageReducer = (state: AdminPageState | null = null, action: { 
         return R.merge(state, { ownCourses: R.reject(({ coursekey }) => coursekey === data, state.ownCourses) })
       }
       break
+    case 'DELETE_TEACHING_INSTANCE':
+      if (state) {
+        return R.merge(state, { teacherCourses: R.reject(({ coursekey }) => coursekey === data, state.teacherCourses) })
+      }
+      break
     case 'SET_NEW_INSTANCE_FORM_VALUE':
       if (state) {
         return R.merge(state, { newInstanceForm: { ...state.newInstanceForm, ...data } })
