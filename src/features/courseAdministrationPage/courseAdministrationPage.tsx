@@ -3,10 +3,13 @@ import { connect } from 'react-redux'
 import AdminPageChapter from './components/AdminPageChapter'
 import Scoreboard from './components/Scoreboard'
 import NewInstanceForm from './components/NewInstanceForm'
-import { ExercisesState, Course, CoursePageState, InitialState, AdminPageState } from './../../types/InitialState'
-import { UserCourse, TeachingInstance } from '../../types/jsontypes'
+import { ExercisesState, Course, InitialState, AdminPageState } from './../../types/InitialState'
+import { UserCourse } from '../../types/jsontypes'
 import { ThunkDispatch } from 'redux-thunk'
-import { fetchTeacherCourses as fetchTeacherCoursesAction, createTeacherCourse as createTeacherCourseAction } from '../../reducers/actions/adminPageActions'
+import {
+  fetchTeacherCourses as fetchTeacherCoursesAction,
+  deleteTeachingInstance as deleteTeachingInstanceAction
+} from '../../reducers/actions/adminPageActions'
 
 export function courseAdministrationPage() {
   const [open, setOpen] = useState(false)
@@ -17,16 +20,40 @@ export function courseAdministrationPage() {
     exercises,
     allCourses,
     fetchTeacherCourses,
+    deleteTeachingInstance,
     teacherCourses
   }: {
     exercises: ExercisesState
     allCourses: Course[]
     fetchTeacherCourses: () => Promise<void>
+    deleteTeachingInstance: (coursekey: string) => Promise<void>
     teacherCourses: UserCourse[]
   }) => {
     useEffect(() => {
       fetchTeacherCourses()
     }, [])
+
+    function deleteInstance(coursekey: string) {
+      if (window.confirm('Haluatko varmasti poistaa opetusinstanssin ja kaikki sen tiedot?\nPoistettuja tietoja ei voida enää palauttaa.')) {
+        deleteTeachingInstance(coursekey)
+      }
+    }
+
+    const addCourses = (courses: UserCourse[]) =>
+      courses.map((course: UserCourse) => (
+        <AdminPageChapter
+          key={course.coursekey}
+          header={course.name}
+          coursekey={course.coursekey}
+          startdate={course.startdate}
+          enddate={course.enddate}
+          material={course.coursematerial_name}
+          material_url={`/courses/${course.id}/version/${course.version}/tab/0`}
+          deleteInstance={deleteInstance}
+        >
+          <Scoreboard course={course} />
+        </AdminPageChapter>
+      ))
 
     const betterCourses = teacherCourses.map(c => {
       const course = allCourses.filter(c2 => c.coursematerial_name === c2.courseName)[0]
@@ -70,21 +97,6 @@ export function courseAdministrationPage() {
     )
   }
 
-  const addCourses = (betterCourses: UserCourse[]) =>
-    betterCourses.map((course: UserCourse) => (
-      <AdminPageChapter
-        key={course.coursekey}
-        header={course.name}
-        coursekey={course.coursekey}
-        startdate={course.startdate}
-        enddate={course.enddate}
-        material={course.coursematerial_name}
-        material_url={`/courses/${course.id}/version/${course.version}/tab/0`}
-      >
-        <Scoreboard course={course} />
-      </AdminPageChapter>
-    ))
-
   const mapStateToProps = ({
     exercises,
     pageState,
@@ -101,6 +113,9 @@ export function courseAdministrationPage() {
   const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
     fetchTeacherCourses: async () => {
       await dispatch(fetchTeacherCoursesAction())
+    },
+    deleteTeachingInstance: async (coursekey: string) => {
+      await dispatch(deleteTeachingInstanceAction(coursekey))
     }
   })
 
